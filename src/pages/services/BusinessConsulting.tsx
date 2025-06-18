@@ -134,9 +134,12 @@ const BusinessConsulting = () => {
           <p className="text-white text-xl mb-8 max-w-2xl mx-auto">
             Let's work together to unlock your business's full potential.
           </p>
-          <button className="bg-white text-[#FF6B35] hover:bg-[#4ECDC4] hover:text-white px-8 py-3 rounded-lg font-medium transition-colors">
+          <Link 
+            to="/contact#book-consultation"
+            className="bg-white text-[#FF6B35] hover:bg-[#4ECDC4] hover:text-white px-8 py-3 rounded-lg font-medium transition-colors"
+          >
             Book Your Consultation
-          </button>
+          </Link>
         </div>
       </section>
     </div>
