@@ -176,7 +176,7 @@ const ChatBot = () => {
       {!isOpen && (
         <button
           onClick={toggleChat}
-          className="fixed bottom-6 right-6 bg-gradient-to-r from-[#FF6B35] to-[#4ECDC4] text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-[9999] group animate-bounce-gentle hover:animate-none hover:scale-110 transform"
+          className="chatbot-widget fixed bottom-6 right-6 bg-gradient-to-r from-[#FF6B35] to-[#4ECDC4] text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-[9999] group animate-bounce-gentle hover:animate-none hover:scale-110 transform"
           aria-label="Open chat"
         >
           <MessageCircle size={24} />
@@ -191,7 +191,7 @@ const ChatBot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className={`fixed bottom-6 right-6 bg-white rounded-lg shadow-2xl z-[9999] transition-all duration-500 transform ${
+        <div className={`chatbot-widget fixed bottom-6 right-6 bg-white rounded-lg shadow-2xl z-[9999] transition-all duration-500 transform ${
           isMinimized ? 'w-80 h-16 scale-95' : 'w-96 h-[600px] scale-100'
         } ${isOpen ? 'animate-slide-in-bottom' : ''}`}>
           {/* Header */}

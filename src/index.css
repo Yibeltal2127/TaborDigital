@@ -287,3 +287,25 @@
     background-position: -200% 0;
   }
 }
+
+/* Responsive Chatbot Widget Fix */
+.chatbot-widget {
+  z-index: 9999;
+  max-width: 95vw;
+  box-sizing: border-box;
+  padding-bottom: env(safe-area-inset-bottom, 16px);
+  padding-right: env(safe-area-inset-right, 16px);
+}
+
+@media (max-width: 600px) {
+  .chatbot-widget {
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 auto !important;
+    max-width: 98vw !important;
+    width: 98vw !important;
+    bottom: 8px !important;
+    padding-left: env(safe-area-inset-left, 8px);
+    padding-right: env(safe-area-inset-right, 8px);
+  }
+}
