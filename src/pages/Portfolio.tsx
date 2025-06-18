@@ -10,7 +10,7 @@ import {
   type PortfolioCategory 
 } from '../lib/portfolio';
 import { generatePageTitle, generateMetaDescription, generateKeywords, generateCanonicalUrl } from '../utils/seo';
-import { scrollToTop } from '../utils/smoothScroll';
+import { scrollToTop, scrollToSection } from '../utils/smoothScroll';
 
 const ProjectCard = ({ project }: { project: PortfolioProject }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -177,6 +177,14 @@ const Portfolio = () => {
 
   useEffect(() => {
     scrollToTop();
+    
+    // Check if there's a hash in the URL and scroll to that section
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        scrollToSection(hash.substring(1));
+      }, 100);
+    }
   }, []);
 
   const loadPortfolioData = async () => {
@@ -301,8 +309,9 @@ const Portfolio = () => {
       </section>
 
       {/* Portfolio Projects */}
-      <section className="py-12">
+      <section id="featured" className="py-12">
         <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">Featured Projects</h2>
           {/* Loading State */}
           {loading && (
             <div className="flex justify-center items-center py-12">
@@ -331,6 +340,34 @@ const Portfolio = () => {
               </p>
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Client Success Stories */}
+      <section id="success-stories" className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">Client Success Stories</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Success story cards would go here */}
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <div className="flex items-center mb-4">
+                <Quote className="text-[#FF6B35] mr-2" size={24} />
+                <h3 className="text-lg font-semibold">Client Testimonial</h3>
+              </div>
+              <p className="text-gray-600 mb-4">
+                "Tabor Digital transformed our business with their innovative solutions. The team's expertise and dedication exceeded our expectations."
+              </p>
+              <div className="flex items-center">
+                <div className="w-10 h-10 bg-[#FF6B35] rounded-full flex items-center justify-center text-white font-bold mr-3">
+                  JD
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">John Doe</p>
+                  <p className="text-sm text-gray-600">CEO, TechCorp</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -5,7 +5,7 @@ import StructuredData from '../components/SEO/StructuredData';
 import { Calendar, User, ArrowRight, Clock, Tag, Search, Loader, Filter, ChevronDown } from 'lucide-react';
 import { fetchBlogPosts, fetchBlogCategories, type BlogPost, type BlogCategory } from '../lib/blog';
 import { generatePageTitle, generateMetaDescription, generateKeywords, generateCanonicalUrl } from '../utils/seo';
-import { scrollToTop } from '../utils/smoothScroll';
+import { scrollToTop, scrollToSection } from '../utils/smoothScroll';
 
 const BlogCard = ({ post }: { post: BlogPost }) => {
   const formatDate = (dateString: string) => {
@@ -106,6 +106,14 @@ const Blog = () => {
 
   useEffect(() => {
     scrollToTop();
+    
+    // Check if there's a hash in the URL and scroll to that section
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        scrollToSection(hash.substring(1));
+      }, 100);
+    }
   }, []);
 
   useEffect(() => {
@@ -218,8 +226,9 @@ const Blog = () => {
       </section>
 
       {/* Blog Posts */}
-      <section className="py-12">
+      <section id="insights" className="py-12">
         <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">Industry Insights</h2>
           {/* Loading State */}
           {loading && (
             <div className="flex justify-center items-center py-12">
@@ -244,6 +253,32 @@ const Blog = () => {
               </p>
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Company Updates */}
+      <section id="updates" className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">Company Updates</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Company update cards would go here */}
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <div className="flex items-center mb-4">
+                <Calendar className="text-[#FF6B35] mr-2" size={24} />
+                <h3 className="text-lg font-semibold">Latest News</h3>
+              </div>
+              <p className="text-gray-600 mb-4">
+                Stay updated with our latest company news, team updates, and industry developments.
+              </p>
+              <Link 
+                to="/blog"
+                className="text-[#FF6B35] hover:text-[#4ECDC4] font-medium transition-colors"
+              >
+                Read More
+                <ArrowRight size={16} className="ml-1 inline" />
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>

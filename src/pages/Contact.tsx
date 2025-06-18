@@ -139,6 +139,77 @@ const Contact = () => {
       {/* Contact Form Section */}
       <ContactForm />
 
+      {/* Request Quote Section */}
+      <section id="quote" className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Request a Custom Quote
+            </h2>
+            <p className="text-xl text-gray-600 mb-8">
+              Get a detailed quote tailored to your specific project requirements and budget.
+            </p>
+            
+            <div className="bg-white p-8 rounded-lg shadow-md">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">What We Need</h3>
+                  <ul className="space-y-3 text-left">
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-[#FF6B35] rounded-full mr-3"></span>
+                      Project description and goals
+                    </li>
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-[#FF6B35] rounded-full mr-3"></span>
+                      Timeline requirements
+                    </li>
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-[#FF6B35] rounded-full mr-3"></span>
+                      Budget range
+                    </li>
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-[#FF6B35] rounded-full mr-3"></span>
+                      Reference examples
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">What You'll Get</h3>
+                  <ul className="space-y-3 text-left">
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-[#4ECDC4] rounded-full mr-3"></span>
+                      Detailed project breakdown
+                    </li>
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-[#4ECDC4] rounded-full mr-3"></span>
+                      Timeline and milestones
+                    </li>
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-[#4ECDC4] rounded-full mr-3"></span>
+                      Transparent pricing
+                    </li>
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-[#4ECDC4] rounded-full mr-3"></span>
+                      Next steps plan
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="mt-8 pt-6 border-t border-gray-200">
+                <Link 
+                  to="/contact"
+                  className="bg-[#FF6B35] hover:bg-[#4ECDC4] text-white px-8 py-3 rounded-lg font-medium transition-colors inline-flex items-center"
+                >
+                  <Send className="mr-2" size={18} />
+                  Request Quote Now
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Book Consultation Section */}
       <section id="book-consultation" className="py-16 bg-white">
         <div className="container mx-auto px-4">

@@ -37,24 +37,24 @@ const Header = () => {
     ],
     Portfolio: [
       { name: 'View All Projects', url: '/portfolio' },
-      { name: 'Featured Projects', url: '/portfolio/featured-projects' },
-      { name: 'Client Success Stories', url: '/portfolio/client-success-stories' }
+      { name: 'Featured Projects', url: '/portfolio#featured' },
+      { name: 'Client Success Stories', url: '/portfolio#success-stories' }
     ],
     Blog: [
       { name: 'Latest Articles', url: '/blog' },
-      { name: 'Industry Insights', url: '/blog/industry-insights' },
-      { name: 'Company Updates', url: '/blog/company-updates' }
+      { name: 'Industry Insights', url: '/blog#insights' },
+      { name: 'Company Updates', url: '/blog#updates' }
     ],
     Resources: [
       { name: 'SEO Services', url: '/services/seo' },
       { name: 'Website Packages', url: '/services/website-design-packages' },
       { name: 'App Development', url: '/services/app-development-process' },
-      { name: 'Business Strategy', url: '/resources/business-strategy' }
+      { name: 'Business Strategy', url: '/services/business-strategy-services' }
     ],
     Contact: [
       { name: 'Get in Touch', url: '/contact' },
       { name: 'Book Consultation', url: '/contact#book-consultation' },
-      { name: 'Request Quote', url: '/contact/request-quote' }
+      { name: 'Request Quote', url: '/contact#quote' }
     ]
   };
 
