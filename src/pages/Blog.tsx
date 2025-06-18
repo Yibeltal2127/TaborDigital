@@ -5,6 +5,7 @@ import StructuredData from '../components/SEO/StructuredData';
 import { Calendar, User, ArrowRight, Clock, Tag, Search, Loader, Filter, ChevronDown } from 'lucide-react';
 import { fetchBlogPosts, fetchBlogCategories, type BlogPost, type BlogCategory } from '../lib/blog';
 import { generatePageTitle, generateMetaDescription, generateKeywords, generateCanonicalUrl } from '../utils/seo';
+import { scrollToTop } from '../utils/smoothScroll';
 
 const BlogCard = ({ post }: { post: BlogPost }) => {
   const formatDate = (dateString: string) => {
@@ -102,6 +103,10 @@ const Blog = () => {
     'Stay informed with the latest trends, insights, and updates from the world of design, development, and digital innovation. Read our expert articles and industry analysis.'
   );
   const pageKeywords = generateKeywords(['blog', 'articles', 'insights', 'digital trends', 'design tips', 'development tutorials']);
+
+  useEffect(() => {
+    scrollToTop();
+  }, []);
 
   useEffect(() => {
     loadBlogData();

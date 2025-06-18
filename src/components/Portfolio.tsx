@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ExternalLink, Filter, ChevronDown, Star, Quote, Loader, Eye, Calendar, User } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { 
   fetchPortfolioProjects, 
   fetchPortfolioCategories, 
@@ -356,12 +357,12 @@ const Portfolio = () => {
         
         {/* View All Button */}
         <div className="text-center mt-12">
-          <button 
-            onClick={handleViewAllProjects}
+          <Link 
+            to="/portfolio"
             className="bg-white border-2 border-[#FF6B35] text-[#FF6B35] hover:bg-orange-50 px-6 py-3 rounded-lg font-medium transition-colors"
           >
             View All Projects
-          </button>
+          </Link>
         </div>
 
         {/* Portfolio Stats */}

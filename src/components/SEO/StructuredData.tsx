@@ -2,183 +2,103 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 interface StructuredDataProps {
-  type: 'organization' | 'service' | 'article' | 'breadcrumb' | 'faq' | 'review';
-  data: any;
+  type: 'organization' | 'website' | 'article' | 'service' | 'breadcrumb';
+  data: Record<string, unknown>;
 }
 
 const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) => {
   const generateStructuredData = () => {
-    const baseUrl = 'https://tabordigital.com';
-    
     switch (type) {
       case 'organization':
         return {
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "Tabor Digital Solutions",
-          "alternateName": "Tabor Digital",
-          "url": baseUrl,
-          "logo": `${baseUrl}/logo.png`,
-          "description": "Leading digital agency in Ethiopia providing web development, graphic design, digital marketing, business consulting, interior design, and engineering services.",
-          "foundingDate": "2020",
-          "founders": [
-            {
-              "@type": "Person",
-              "name": "Daniel Mekonnen"
-            }
-          ],
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Bole Road",
-            "addressLocality": "Addis Ababa",
-            "addressCountry": "ET"
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: 'Tabor Digital Solutions',
+          url: 'https://tabordigital.com',
+          logo: 'https://tabordigital.com/tabordigitallogo.jpg',
+          description: 'Transform your business with our comprehensive digital solutions. We offer graphic design, web development, digital marketing, business consulting, interior design, and engineering services in Ethiopia.',
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Addis Ababa',
+            addressCountry: 'ET',
+            addressRegion: 'Addis Ababa'
           },
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+251-91-123-4567",
-            "contactType": "customer service",
-            "email": "contact@tabordigital.com",
-            "availableLanguage": ["English", "Amharic"]
+          contactPoint: {
+            '@type': 'ContactPoint',
+            telephone: '+251-910-083-733',
+            contactType: 'customer service',
+            email: 'contact@tabordigital.com'
           },
-          "sameAs": [
-            "https://www.facebook.com/tabordigital",
-            "https://www.linkedin.com/company/tabordigital",
-            "https://twitter.com/tabordigital"
-          ],
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Digital Services",
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Web Development",
-                  "description": "Custom website and web application development"
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Graphic Design",
-                  "description": "Brand identity and visual design services"
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Digital Marketing",
-                  "description": "SEO, social media, and digital advertising services"
-                }
-              }
-            ]
-          }
+          sameAs: [
+            'https://www.facebook.com/tabordigital',
+            'https://www.linkedin.com/company/tabor-digital',
+            'https://twitter.com/TaborDigital'
+          ]
         };
 
-      case 'service':
+      case 'website':
         return {
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "name": data.name,
-          "description": data.description,
-          "provider": {
-            "@type": "Organization",
-            "name": "Tabor Digital Solutions",
-            "url": baseUrl
-          },
-          "areaServed": {
-            "@type": "Country",
-            "name": "Ethiopia"
-          },
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": data.name,
-            "itemListElement": data.features?.map((feature: string, index: number) => ({
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": feature
-              }
-            })) || []
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: 'Tabor Digital Solutions',
+          url: 'https://tabordigital.com',
+          description: 'Professional digital solutions in Ethiopia',
+          publisher: {
+            '@type': 'Organization',
+            name: 'Tabor Digital Solutions'
           }
         };
 
       case 'article':
         return {
-          "@context": "https://schema.org",
-          "@type": "Article",
-          "headline": data.title,
-          "description": data.excerpt,
-          "image": data.featured_image,
-          "author": {
-            "@type": "Person",
-            "name": data.author_name,
-            "jobTitle": data.author_role
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: data.headline as string,
+          description: data.description as string,
+          image: data.image as string,
+          author: {
+            '@type': 'Person',
+            name: data.author as string
           },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Tabor Digital Solutions",
-            "logo": {
-              "@type": "ImageObject",
-              "url": `${baseUrl}/logo.png`
+          publisher: {
+            '@type': 'Organization',
+            name: 'Tabor Digital Solutions',
+            logo: {
+              '@type': 'ImageObject',
+              url: 'https://tabordigital.com/tabordigitallogo.jpg'
             }
           },
-          "datePublished": data.published_at,
-          "dateModified": data.updated_at,
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": `${baseUrl}/blog/${data.slug}`
+          datePublished: data.datePublished as string,
+          dateModified: data.dateModified as string
+        };
+
+      case 'service':
+        return {
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: data.name as string,
+          description: data.description as string,
+          provider: {
+            '@type': 'Organization',
+            name: 'Tabor Digital Solutions'
           },
-          "keywords": data.tags?.join(', '),
-          "articleSection": data.category
+          areaServed: {
+            '@type': 'Country',
+            name: 'Ethiopia'
+          },
+          serviceType: data.serviceType as string
         };
 
       case 'breadcrumb':
         return {
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": data.map((item: any, index: number) => ({
-            "@type": "ListItem",
-            "position": index + 1,
-            "name": item.name,
-            "item": `${baseUrl}${item.url}`
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: (data.items as Array<{ name: string; url: string }>).map((item, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: item.name,
+            item: item.url
           }))
-        };
-
-      case 'faq':
-        return {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": data.map((faq: any) => ({
-            "@type": "Question",
-            "name": faq.question,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": faq.answer
-            }
-          }))
-        };
-
-      case 'review':
-        return {
-          "@context": "https://schema.org",
-          "@type": "Review",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": data.rating,
-            "bestRating": "5"
-          },
-          "author": {
-            "@type": "Person",
-            "name": data.author
-          },
-          "reviewBody": data.text,
-          "itemReviewed": {
-            "@type": "Organization",
-            "name": "Tabor Digital Solutions"
-          }
         };
 
       default:
@@ -188,7 +108,9 @@ const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) => {
 
   const structuredData = generateStructuredData();
 
-  if (!structuredData) return null;
+  if (!structuredData) {
+    return null;
+  }
 
   return (
     <Helmet>

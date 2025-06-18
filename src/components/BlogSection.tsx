@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, User, ArrowRight, Clock, Tag, Search, Loader } from 'lucide-react';
+import { Calendar, User, ArrowRight, Clock, Tag, Search, Loader, ChevronDown, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { fetchBlogPosts, fetchBlogCategories, subscribeToNewsletter, type BlogPost, type BlogCategory } from '../lib/blog';
 
 const BlogCard = ({ post, isExpanded, onToggleExpand }: { 
@@ -122,7 +123,7 @@ const BlogSection = () => {
 
   useEffect(() => {
     loadBlogData();
-  }, [selectedCategory]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const loadBlogData = async () => {
     setLoading(true);
@@ -188,6 +189,22 @@ const BlogSection = () => {
   });
 
   const allCategories = ['All', ...categories.map(cat => cat.name)];
+
+  const handleViewAll = () => {
+    // This function is no longer needed since we're using Link
+  };
+
+  if (loading) {
+    return (
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#FF6B35] mx-auto"></div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="blog" className="py-20 bg-gray-50">
@@ -261,6 +278,17 @@ const BlogSection = () => {
             </p>
           </div>
         )}
+        
+        {/* View All Posts Button */}
+        <div className="text-center mt-12">
+          <Link 
+            to="/blog"
+            className="bg-white border-2 border-[#FF6B35] text-[#FF6B35] hover:bg-orange-50 px-6 py-3 rounded-lg font-medium transition-colors inline-flex items-center"
+          >
+            View All Posts
+            <ArrowRight className="ml-2" size={18} />
+          </Link>
+        </div>
         
         {/* Newsletter Signup */}
         <div className="mt-16 bg-white rounded-2xl shadow-lg p-8 md:p-12 text-center">

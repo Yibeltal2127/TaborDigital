@@ -1,8 +1,15 @@
 import React from 'react';
-import { Building, Rocket, Construction, ShoppingBag, HeartHandshake } from 'lucide-react';
+import { Building, Rocket, Construction, ShoppingBag, HeartHandshake, LucideIcon } from 'lucide-react';
 import { useStaggeredAnimation } from '../hooks/useScrollAnimation';
 
-const ClientSegment = ({ icon, title, index, isVisible }) => {
+interface ClientSegmentProps {
+  icon: LucideIcon;
+  title: string;
+  index: number;
+  isVisible: boolean;
+}
+
+const ClientSegment = ({ icon, title, index, isVisible }: ClientSegmentProps) => {
   const Icon = icon;
   
   return (

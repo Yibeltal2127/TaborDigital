@@ -3,11 +3,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SEOProvider from './components/SEO/SEOProvider';
 import MetaTags from './components/SEO/MetaTags';
 import StructuredData from './components/SEO/StructuredData';
+import GoogleAnalytics from './components/SEO/GoogleAnalytics';
 import PreloadCriticalResources from './components/Performance/PreloadCriticalResources';
 import LoadingSpinner from './components/LoadingSpinner';
 import FeedbackButton from './components/FeedbackButton';
 import ErrorBoundary from './pages/ErrorBoundary';
 import { usePageTracking } from './hooks/usePageTracking';
+import { useScrollToTop } from './hooks/useScrollToTop';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -49,6 +51,7 @@ import BusinessStrategyServices from './pages/services/BusinessStrategyServices'
 
 const AppContent: React.FC = () => {
   const { trackEvent } = usePageTracking();
+  useScrollToTop();
 
   useEffect(() => {
     // Track app initialization
@@ -81,11 +84,19 @@ const AppContent: React.FC = () => {
           </>
         } />
         <Route path="/about" element={<About />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/about/our-values" element={<About />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
+        <Route path="/portfolio/featured-projects" element={<PortfolioPage />} />
+        <Route path="/portfolio/client-success-stories" element={<PortfolioPage />} />
+        <Route path="/resources" element={<Blog />} />
+        <Route path="/resources/business-strategy" element={<Blog />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/industry-insights" element={<Blog />} />
+        <Route path="/blog/company-updates" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/portfolio/:slug" element={<PortfolioProject />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/contact/request-quote" element={<Contact />} />
         <Route path="/thank-you" element={<ThankYou />} />
         <Route path="/server-error" element={<ServerError />} />
         <Route path="/maintenance" element={<MaintenanceMode />} />
@@ -135,6 +146,7 @@ function App() {
 
   return (
     <SEOProvider>
+      <GoogleAnalytics measurementId="G-XXXXXXXXXX" />
       <PreloadCriticalResources />
       <ErrorBoundary>
         <Router>

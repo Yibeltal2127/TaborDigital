@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import MetaTags from '../components/SEO/MetaTags';
 import StructuredData from '../components/SEO/StructuredData';
 import TeamSection from '../components/TeamSection';
 import { Award, Users, Globe, TrendingUp, CheckCircle } from 'lucide-react';
 import { generatePageTitle, generateMetaDescription, generateKeywords, generateCanonicalUrl } from '../utils/seo';
+import { scrollToTop } from '../utils/smoothScroll';
 
 const About = () => {
+  useEffect(() => {
+    scrollToTop();
+  }, []);
+
   const pageTitle = generatePageTitle('About Us - Our Story, Team & Values');
   const pageDescription = generateMetaDescription(
     'Learn about Tabor Digital Solutions - our story, mission, values, and the passionate team behind Ethiopia\'s leading digital agency. Discover how we\'ve helped 200+ businesses grow since 2020.'

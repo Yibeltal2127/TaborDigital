@@ -1,5 +1,6 @@
 import React from 'react';
-import { Palette, Code, BarChart3, Briefcase, Home, Wrench, DollarSign, Calendar } from 'lucide-react';
+import { MessageCircle, ArrowRight, Calendar, Phone, Mail, MapPin } from 'lucide-react';
+import { Palette, Code, BarChart3, Briefcase, Home, Wrench, DollarSign } from 'lucide-react';
 
 interface QuickActionsProps {
   onAction: (action: string) => void;

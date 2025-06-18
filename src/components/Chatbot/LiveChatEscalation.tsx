@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { User, Mail, Phone, Send, X, CheckCircle, MessageCircle } from 'lucide-react';
+import React from 'react';
+import { X, MessageCircle } from 'lucide-react';
 
 interface LiveChatEscalationProps {
   userInfo: {
@@ -7,13 +7,15 @@ interface LiveChatEscalationProps {
     email: string;
     phone: string;
   };
-  setUserInfo: (info: any) => void;
+  setUserInfo: React.Dispatch<React.SetStateAction<{
+    name: string;
+    email: string;
+    phone: string;
+  }>>;
   onClose: () => void;
 }
 
-const LiveChatEscalation: React.FC<LiveChatEscalationProps> = ({ userInfo, setUserInfo, onClose }) => {
-  const [step, setStep] = useState<'contact-options'>('contact-options');
-
+const LiveChatEscalation: React.FC<LiveChatEscalationProps> = ({ onClose }) => {
   const handleContactOption = (type: 'telegram' | 'whatsapp') => {
     if (type === 'telegram') {
       window.open('https://t.me/+251936747488', '_blank');

@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import MetaTags from '../components/SEO/MetaTags';
+import StructuredData from '../components/SEO/StructuredData';
 import ContactForm from '../components/ContactForm';
 import { Mail, Phone, MapPin, Clock, MessageCircle, Send } from 'lucide-react';
 import { generatePageTitle, generateMetaDescription, generateKeywords, generateCanonicalUrl } from '../utils/seo';
+import { scrollToTop, scrollToSection } from '../utils/smoothScroll';
 
 const Contact = () => {
   const pageTitle = generatePageTitle('Contact Us - Get in Touch');
@@ -67,6 +70,18 @@ const Contact = () => {
     }
   ];
 
+  useEffect(() => {
+    scrollToTop();
+    
+    // Check if there's a hash in the URL and scroll to that section
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        scrollToSection(hash.substring(1));
+      }, 100);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <MetaTags
@@ -124,6 +139,89 @@ const Contact = () => {
       {/* Contact Form Section */}
       <ContactForm />
 
+      {/* Book Consultation Section */}
+      <section id="book-consultation" className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Book Your Free Consultation
+            </h2>
+            <p className="text-xl text-gray-600 mb-8">
+              Ready to discuss your project? Schedule a free 30-minute consultation with our experts to explore how we can help transform your business.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-gray-50 p-6 rounded-lg">
+                <div className="text-3xl font-bold text-[#FF6B35] mb-2">1</div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Schedule Call</h3>
+                <p className="text-gray-600">Choose a convenient time for your free consultation call.</p>
+              </div>
+              <div className="bg-gray-50 p-6 rounded-lg">
+                <div className="text-3xl font-bold text-[#FF6B35] mb-2">2</div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Discuss Project</h3>
+                <p className="text-gray-600">Share your goals and requirements with our team.</p>
+              </div>
+              <div className="bg-gray-50 p-6 rounded-lg">
+                <div className="text-3xl font-bold text-[#FF6B35] mb-2">3</div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Get Proposal</h3>
+                <p className="text-gray-600">Receive a detailed proposal tailored to your needs.</p>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-[#FF6B35] to-[#4ECDC4] p-8 rounded-lg text-white mb-8">
+              <h3 className="text-2xl font-bold mb-4">What's Included in Your Free Consultation?</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                <ul className="space-y-2">
+                  <li className="flex items-center">
+                    <span className="mr-2">✓</span>
+                    Project requirements analysis
+                  </li>
+                  <li className="flex items-center">
+                    <span className="mr-2">✓</span>
+                    Technology recommendations
+                  </li>
+                  <li className="flex items-center">
+                    <span className="mr-2">✓</span>
+                    Timeline estimation
+                  </li>
+                </ul>
+                <ul className="space-y-2">
+                  <li className="flex items-center">
+                    <span className="mr-2">✓</span>
+                    Budget discussion
+                  </li>
+                  <li className="flex items-center">
+                    <span className="mr-2">✓</span>
+                    Portfolio showcase
+                  </li>
+                  <li className="flex items-center">
+                    <span className="mr-2">✓</span>
+                    Next steps planning
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                to="/contact"
+                className="bg-[#FF6B35] hover:bg-[#4ECDC4] text-white px-8 py-3 rounded-lg font-medium transition-colors inline-flex items-center justify-center"
+              >
+                <Send className="mr-2" size={18} />
+                Schedule Free Consultation
+              </Link>
+              <a 
+                href="tel:+251911234567"
+                className="border-2 border-[#FF6B35] text-[#FF6B35] hover:bg-[#FF6B35] hover:text-white px-8 py-3 rounded-lg font-medium transition-colors inline-flex items-center justify-center"
+              >
+                <Phone className="mr-2" size={18} />
+                Call to Book Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Business Hours & FAQ */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -176,13 +274,13 @@ const Contact = () => {
           <p className="text-white text-xl mb-8 max-w-2xl mx-auto">
             Don't wait! Book your free consultation today and let's discuss how we can help transform your business.
           </p>
-          <a 
-            href="#contact"
+          <Link 
+            to="/contact#book-consultation"
             className="bg-white text-[#FF6B35] hover:bg-[#4ECDC4] hover:text-white px-8 py-3 rounded-lg font-medium transition-colors inline-flex items-center"
           >
             <Send className="mr-2" size={18} />
             Book Free Consultation
-          </a>
+          </Link>
         </div>
       </section>
     </div>

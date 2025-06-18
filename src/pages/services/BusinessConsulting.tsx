@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Briefcase, CheckCircle, ArrowRight, LineChart, Users, Target } from 'lucide-react';
 
 const BusinessConsulting = () => {

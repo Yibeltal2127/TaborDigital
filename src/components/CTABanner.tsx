@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Lightbulb } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const CTABanner = () => {
   return (
@@ -17,13 +18,13 @@ const CTABanner = () => {
             </h2>
           </div>
           
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="bg-white text-[#FF6B35] hover:bg-orange-50 px-8 py-3 rounded-lg font-medium transition-all flex items-center whitespace-nowrap group"
           >
             Get Started
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

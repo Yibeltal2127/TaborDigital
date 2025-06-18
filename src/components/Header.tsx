@@ -24,8 +24,8 @@ const Header = () => {
   const navigationItems = {
     About: [
       { name: 'Our Story', url: '/about' },
-      { name: 'Our Team', url: '/about#team' },
-      { name: 'Our Values', url: '/about#values' }
+      { name: 'Our Team', url: '/about' },
+      { name: 'Our Values', url: '/about/our-values' }
     ],
     Services: [
       { name: 'Graphic Design', url: '/services/graphic-design' },
@@ -37,24 +37,24 @@ const Header = () => {
     ],
     Portfolio: [
       { name: 'View All Projects', url: '/portfolio' },
-      { name: 'Featured Projects', url: '/portfolio?featured=true' },
-      { name: 'Client Success Stories', url: '/portfolio#testimonials' }
+      { name: 'Featured Projects', url: '/portfolio/featured-projects' },
+      { name: 'Client Success Stories', url: '/portfolio/client-success-stories' }
     ],
     Blog: [
       { name: 'Latest Articles', url: '/blog' },
-      { name: 'Industry Insights', url: '/blog?category=insights' },
-      { name: 'Company Updates', url: '/blog?category=updates' }
+      { name: 'Industry Insights', url: '/blog/industry-insights' },
+      { name: 'Company Updates', url: '/blog/company-updates' }
     ],
     Resources: [
       { name: 'SEO Services', url: '/services/seo' },
       { name: 'Website Packages', url: '/services/website-design-packages' },
       { name: 'App Development', url: '/services/app-development-process' },
-      { name: 'Business Strategy', url: '/services/business-strategy' }
+      { name: 'Business Strategy', url: '/resources/business-strategy' }
     ],
     Contact: [
       { name: 'Get in Touch', url: '/contact' },
-      { name: 'Book Consultation', url: '/contact#consultation' },
-      { name: 'Request Quote', url: '/contact#quote' }
+      { name: 'Book Consultation', url: '/contact#book-consultation' },
+      { name: 'Request Quote', url: '/contact/request-quote' }
     ]
   };
 
@@ -141,28 +141,13 @@ const Header = () => {
                   }`}
                 >
                   {items.map((item) => (
-                    item.url.startsWith('/services/') || 
-                    item.url === '/about' || 
-                    item.url === '/blog' || 
-                    item.url === '/portfolio' || 
-                    item.url === '/contact' ? (
-                      <Link
-                        key={item.name}
-                        to={item.url}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-[#FF6B35] hover:to-[#4ECDC4] hover:text-white transition-all duration-300 transform hover:translate-x-2"
-                      >
-                        {item.name}
-                      </Link>
-                    ) : (
-                      <Link
-                        key={item.name}
-                        to="/"
-                        onClick={() => handleSectionNavigation(item.url)}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-[#FF6B35] hover:to-[#4ECDC4] hover:text-white transition-all duration-300 transform hover:translate-x-2"
-                      >
-                        {item.name}
-                      </Link>
-                    )
+                    <Link
+                      key={item.name}
+                      to={item.url}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-[#FF6B35] hover:to-[#4ECDC4] hover:text-white transition-all duration-300 transform hover:translate-x-2"
+                    >
+                      {item.name}
+                    </Link>
                   ))}
                 </div>
               </div>

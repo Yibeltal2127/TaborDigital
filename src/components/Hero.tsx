@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Hero = () => {
@@ -24,13 +25,19 @@ const Hero = () => {
               From graphic design to app development and engineering services — Tabor Digital Solutions delivers what your business needs to grow.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="bg-[#FF6B35] hover:bg-[#4ECDC4] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center group hover:shadow-lg hover:scale-105 transform">
+              <Link 
+                to="/portfolio" 
+                className="bg-[#FF6B35] hover:bg-[#4ECDC4] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center group hover:shadow-lg hover:scale-105 transform"
+              >
                 Start a Project
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={18} />
-              </button>
-              <button className="border-2 border-[#FF6B35] text-[#FF6B35] hover:bg-[#FF6B35] hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 transform">
+              </Link>
+              <Link 
+                to="/contact" 
+                className="border-2 border-[#FF6B35] text-[#FF6B35] hover:bg-[#FF6B35] hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 transform"
+              >
                 Request a Free Consultation
-              </button>
+              </Link>
             </div>
           </div>
           <div 

@@ -8,37 +8,43 @@ declare global {
   }
 }
 
+interface TrackingEvent {
+  event: string;
+  properties?: Record<string, string | number | boolean>;
+  timestamp?: number;
+}
+
 export const usePageTracking = () => {
   const location = useLocation();
 
+  const trackEvent = (event: string, properties?: Record<string, string | number | boolean>) => {
+    const trackingEvent: TrackingEvent = {
+      event,
+      properties,
+      timestamp: Date.now()
+    };
+
+    // Send to analytics service (Google Analytics, Mixpanel, etc.)
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', event, properties);
+    }
+
+    // Log to console in development
+    if (process.env.NODE_ENV === 'development') {
+      console.log('📊 Tracking Event:', trackingEvent);
+    }
+  };
+
+  const trackPageView = (pathname: string) => {
+    trackEvent('page_view', {
+      page_path: pathname,
+      page_title: document.title
+    });
+  };
+
   useEffect(() => {
-    // Track page views with Google Analytics
-    if (typeof window.gtag !== 'undefined') {
-      window.gtag('config', 'GA_MEASUREMENT_ID', {
-        page_path: location.pathname + location.search,
-      });
-    }
+    trackPageView(location.pathname);
+  }, [location.pathname]);
 
-    // Track page views with custom analytics
-    trackPageView(location.pathname + location.search);
-  }, [location]);
-
-  const trackPageView = (path: string) => {
-    // Custom analytics tracking
-    console.log('Page view tracked:', path);
-    
-    // You can integrate with other analytics services here
-    // Example: Mixpanel, Hotjar, etc.
-  };
-
-  const trackEvent = (eventName: string, properties?: Record<string, any>) => {
-    // Track custom events
-    if (typeof window.gtag !== 'undefined') {
-      window.gtag('event', eventName, properties);
-    }
-    
-    console.log('Event tracked:', eventName, properties);
-  };
-
-  return { trackEvent };
+  return { trackEvent, trackPageView };
 };

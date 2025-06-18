@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { MessageCircle, X, Send, Bot, User, Phone, Mail, ExternalLink, Minimize2, Maximize2 } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, Minimize2, Maximize2 } from 'lucide-react';
 import ChatMessage from './ChatMessage';
 import QuickActions from './QuickActions';
 import LiveChatEscalation from './LiveChatEscalation';
-import { chatbotResponses, getAIResponse, type ChatMessage as ChatMessageType } from '../../lib/chatbot';
+import { getAIResponse, type ChatMessage as ChatMessageType } from '../../lib/chatbot';
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +12,6 @@ const ChatBot = () => {
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [showLiveChat, setShowLiveChat] = useState(false);
-  const [userSatisfaction, setUserSatisfaction] = useState<'satisfied' | 'unsatisfied' | null>(null);
   const [conversationStage, setConversationStage] = useState<'greeting' | 'helping' | 'escalation'>('greeting');
   const [userInfo, setUserInfo] = useState({ name: '', email: '', phone: '' });
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -127,8 +126,6 @@ const ChatBot = () => {
   };
 
   const handleSatisfactionResponse = (satisfied: boolean) => {
-    setUserSatisfaction(satisfied ? 'satisfied' : 'unsatisfied');
-    
     if (satisfied) {
       addMessage({
         text: "Great! I'm glad I could help. Is there anything else you'd like to know about our services?",

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { MessageSquare, X, Send, Star, ThumbsUp, ThumbsDown, Loader } from 'lucide-react';
+import { MessageCircle, X, ThumbsUp, Send, Star, Loader } from 'lucide-react';
 
 interface FeedbackData {
   rating: number;
@@ -140,7 +140,7 @@ const FeedbackButton = () => {
           aria-label="Give feedback"
         >
           <div className="flex items-center space-x-2">
-            <MessageSquare size={20} />
+            <MessageCircle size={20} />
             <span className="font-medium">Feedback</span>
           </div>
           <div className="absolute -top-2 -right-2 bg-[#4ECDC4] text-white text-xs rounded-full w-6 h-6 flex items-center justify-center animate-pulse">
@@ -160,7 +160,7 @@ const FeedbackButton = () => {
           <div className="bg-[#FF6B35] text-white p-4 rounded-t-lg flex items-center justify-between">
             <div className="flex items-center">
               <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-3">
-                <MessageSquare size={18} />
+                <MessageCircle size={18} />
               </div>
               <div>
                 <h3 className="font-semibold">Feedback</h3>

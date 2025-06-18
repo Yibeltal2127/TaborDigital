@@ -10,6 +10,7 @@ import {
   type PortfolioCategory 
 } from '../lib/portfolio';
 import { generatePageTitle, generateMetaDescription, generateKeywords, generateCanonicalUrl } from '../utils/seo';
+import { scrollToTop } from '../utils/smoothScroll';
 
 const ProjectCard = ({ project }: { project: PortfolioProject }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -164,7 +165,7 @@ const Portfolio = () => {
   const [showFeaturedOnly, setShowFeaturedOnly] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
 
-  const pageTitle = generatePageTitle('Portfolio - Our Featured Work & Projects');
+  const pageTitle = generatePageTitle('Our Portfolio - Featured Projects & Success Stories');
   const pageDescription = generateMetaDescription(
     'Explore our diverse portfolio showcasing design excellence and technical innovation across multiple disciplines. See our successful projects and client testimonials.'
   );
@@ -173,6 +174,10 @@ const Portfolio = () => {
   useEffect(() => {
     loadPortfolioData();
   }, [selectedCategory, showFeaturedOnly]);
+
+  useEffect(() => {
+    scrollToTop();
+  }, []);
 
   const loadPortfolioData = async () => {
     setLoading(true);
