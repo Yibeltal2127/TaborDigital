@@ -23,9 +23,9 @@ const Header = () => {
 
   const navigationItems = {
     About: [
-      { name: 'Our Story', url: '/about' },
-      { name: 'Our Team', url: '/about' },
-      { name: 'Our Values', url: '/about/our-values' }
+      { name: 'Our Story', url: '/about#story' },
+      { name: 'Our Team', url: '/about#team' },
+      { name: 'Our Values', url: '/about#values' }
     ],
     Services: [
       { name: 'Graphic Design', url: '/services/graphic-design' },

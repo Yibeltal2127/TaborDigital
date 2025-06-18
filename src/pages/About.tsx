@@ -88,7 +88,7 @@ const About = () => {
       />
 
       {/* Hero Section */}
-      <section className="pt-20 bg-gradient-to-br from-blue-50 to-white">
+      <section id="story" className="pt-20 bg-gradient-to-br from-blue-50 to-white">
         <div className="container mx-auto px-4 py-16">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -163,6 +163,32 @@ const About = () => {
         </div>
       </section>
 
+      {/* Our Values Section */}
+      <section id="values" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Core Values</h2>
+            <p className="text-xl text-gray-600 mb-8">
+              At Tabor Digital Solutions, our values guide every decision and action. We believe in:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+              <div>
+                <h3 className="text-xl font-semibold text-[#FF6B35] mb-2">Integrity</h3>
+                <p className="text-gray-700 mb-4">We are honest, transparent, and committed to doing what's best for our clients and our company.</p>
+                <h3 className="text-xl font-semibold text-[#FF6B35] mb-2">Innovation</h3>
+                <p className="text-gray-700 mb-4">We constantly seek new and better ways to serve our clients and grow our business.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-[#FF6B35] mb-2">Collaboration</h3>
+                <p className="text-gray-700 mb-4">We work together, across boundaries, to meet the needs of our customers and to help our company win.</p>
+                <h3 className="text-xl font-semibold text-[#FF6B35] mb-2">Excellence</h3>
+                <p className="text-gray-700 mb-4">We strive for excellence in everything we do, delivering outstanding results for our clients.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Company Timeline */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -197,7 +223,9 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <TeamSection />
+      <section id="team">
+        <TeamSection />
+      </section>
 
       {/* CTA Section */}
       <section className="bg-[#FF6B35] py-16">
