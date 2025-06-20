@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Globe, Facebook, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Globe, Facebook, Linkedin, CheckCircle, AlertCircle } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 
 const Footer = () => {
-  // Inline newsletter form state for custom layout
+  // Newsletter form state (copied from NewsletterForm.tsx)
   const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -16,25 +18,27 @@ const Footer = () => {
     setError(null);
     setSuccess(false);
     if (!validateEmail(email)) {
-      setError('Enter a valid email.');
+      setError('Please enter a valid email address.');
       return;
     }
     setIsSubmitting(true);
     try {
       // Insert into Supabase
-      const { error: supabaseError } = await import('../lib/supabase').then(m => m.supabase)
-        .then(supabase => supabase.from('newsletter_subscribers').insert([{ email }]));
+      const { error: supabaseError } = await supabase
+        .from('newsletter_subscribers')
+        .insert([{ email, name }]);
       if (supabaseError) throw supabaseError;
       // Call Edge Function
       await fetch('https://wdvhnchretvgqyrwpasr.functions.supabase.co/send-newsletter-welcome', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ record: { email } }),
+        body: JSON.stringify({ record: { email, name } }),
       });
       setSuccess(true);
       setEmail('');
+      setName('');
     } catch (err) {
-      setError('Failed. Try again later.');
+      setError('Failed to subscribe. Please try again later.');
     } finally {
       setIsSubmitting(false);
     }
@@ -43,14 +47,14 @@ const Footer = () => {
   return (
     <footer className="bg-[#2C3E50] text-white pt-8 pb-8">
       <div className="container mx-auto px-4 md:px-6">
-        {/* Newsletter Bar - right-aligned, minimal, no background */}
+        {/* Newsletter Bar - right-aligned, minimal, responsive */}
         <div className="flex justify-end mb-8">
           <form
             onSubmit={handleNewsletter}
-            className="flex items-center gap-3"
+            className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 w-full max-w-xl bg-transparent"
             style={{ maxWidth: '480px' }}
           >
-            <div className="flex flex-col justify-center mr-2 min-w-[180px]">
+            <div className="flex flex-col justify-center min-w-[180px] mr-0 sm:mr-2">
               <span className="flex items-center gap-1 text-[#FFD166] tracking-wide italic text-base" style={{ fontWeight: 400 }}>
                 <Mail size={18} className="inline-block mb-0.5" />
                 Stay in the Loop
@@ -60,28 +64,40 @@ const Footer = () => {
               </span>
             </div>
             <input
+              type="text"
+              placeholder="Your Name (optional)"
+              className="px-3 py-2 rounded border-none focus:ring-2 focus:ring-[#FF6B35] text-sm text-gray-800 min-w-[100px] bg-white"
+              value={name}
+              onChange={e => setName(e.target.value)}
+              disabled={isSubmitting}
+              style={{ borderRadius: '6px' }}
+            />
+            <input
               type="email"
-              placeholder="Your Email Address"
-              className="px-3 py-2 rounded-l border-none focus:ring-2 focus:ring-[#FF6B35] text-sm text-gray-800 min-w-[140px] md:min-w-[180px] bg-white"
+              placeholder="Your Email Address *"
+              className="px-3 py-2 rounded border-none focus:ring-2 focus:ring-[#FF6B35] text-sm text-gray-800 min-w-[120px] bg-white"
               value={email}
               onChange={e => setEmail(e.target.value)}
               required
               disabled={isSubmitting}
-              style={{ borderTopRightRadius: 0, borderBottomRightRadius: 0 }}
+              style={{ borderRadius: '6px' }}
             />
             <button
               type="submit"
-              className="bg-[#FF6B35] hover:bg-[#4ECDC4] text-white font-semibold px-4 py-2 rounded-r transition-all text-sm"
+              className="bg-[#FF6B35] hover:bg-[#4ECDC4] text-white font-semibold px-4 py-2 rounded transition-all text-sm whitespace-nowrap"
               disabled={isSubmitting}
-              style={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}
             >
               {isSubmitting ? 'Subscribing...' : 'Subscribe'}
             </button>
             {success && (
-              <span className="ml-3 text-green-200 text-xs font-medium">Thank you!</span>
+              <span className="ml-2 flex items-center text-green-200 text-xs font-medium">
+                <CheckCircle size={16} className="mr-1" /> Thank you!
+              </span>
             )}
             {error && (
-              <span className="ml-3 text-red-200 text-xs font-medium">{error}</span>
+              <span className="ml-2 flex items-center text-red-200 text-xs font-medium">
+                <AlertCircle size={16} className="mr-1" /> {error}
+              </span>
             )}
           </form>
         </div>
