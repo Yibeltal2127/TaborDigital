@@ -179,7 +179,7 @@ INSERT INTO portfolio_projects (
       'https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     ],
     'graphic-design',
-    ARRAY[],
+    ARRAY[]::text[],
     ARRAY['Logo Design', 'Brand Guidelines', 'Business Cards', 'Letterhead', 'Social Media Templates', 'Website Design'],
     ARRAY['Adobe Illustrator', 'Adobe Photoshop', 'Adobe InDesign', 'Figma'],
     ARRAY['Print', 'Digital', 'Social Media'],
@@ -200,7 +200,7 @@ INSERT INTO portfolio_projects (
       'https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     ],
     'interior-design',
-    ARRAY[],
+    ARRAY[]::text[],
     ARRAY['Space Planning', '3D Renderings', 'Furniture Selection', 'Lighting Design', 'Material Specifications', 'Project Management'],
     ARRAY['SketchUp', 'V-Ray', 'AutoCAD', 'Photoshop', '3ds Max'],
     ARRAY['3D Visualization', 'Technical Drawings'],
@@ -221,7 +221,7 @@ INSERT INTO portfolio_projects (
       'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     ],
     'digital-marketing',
-    ARRAY[],
+    ARRAY[]::text[],
     ARRAY['Social Media Strategy', 'Content Creation', 'Influencer Campaigns', 'Paid Advertising', 'Analytics Reports', 'Brand Partnerships'],
     ARRAY['Facebook Ads Manager', 'Instagram Creator Studio', 'Google Analytics', 'Canva', 'Hootsuite'],
     ARRAY['Instagram', 'Facebook', 'TikTok', 'Google Ads'],
@@ -242,7 +242,7 @@ INSERT INTO portfolio_projects (
       'https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     ],
     'business-consulting',
-    ARRAY[],
+    ARRAY[]::text[],
     ARRAY['Market Analysis', 'Business Plan', 'Financial Projections', 'Operational Strategy', 'Growth Roadmap', 'Implementation Support'],
     ARRAY['Excel', 'PowerBI', 'Tableau', 'SWOT Analysis', 'Financial Modeling'],
     ARRAY['Business Strategy', 'Financial Planning'],
@@ -263,7 +263,7 @@ INSERT INTO portfolio_projects (
       'https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     ],
     'engineering-design',
-    ARRAY[],
+    ARRAY[]::text[],
     ARRAY['Structural Drawings', 'Foundation Design', 'Seismic Analysis', 'MEP Coordination', 'Construction Documents', 'Site Supervision'],
     ARRAY['AutoCAD', 'ETABS', 'SAP2000', 'Revit', 'Civil 3D'],
     ARRAY['Technical Drawings', 'Engineering Analysis'],
