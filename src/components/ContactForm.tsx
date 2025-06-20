@@ -91,6 +91,22 @@ const ContactForm = () => {
         service: '',
         message: ''
       });
+
+      // Call Supabase Edge Function to send confirmation email
+      await fetch('https://wdvhnchretvgqyrwpasr.functions.supabase.co/send-contact-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          record: {
+            name: formState.name,
+            email: formState.email,
+            service: formState.service,
+            message: formState.message,
+          }
+        }),
+      });
     } catch (err) {
       setErrors({ 
         general: 'Failed to submit form. Please try again later or contact us directly.' 
