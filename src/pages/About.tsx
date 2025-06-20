@@ -224,7 +224,7 @@ const About = () => {
 
       {/* Team Section */}
       <section id="team">
-        <TeamSection />
+      <TeamSection />
       </section>
 
       {/* CTA Section */}
