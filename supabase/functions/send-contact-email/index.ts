@@ -14,7 +14,20 @@ const RESEND_API_URL = 'https://api.resend.com/emails';
 const fromEmail = 'noreply@tabordigital.com'; // Replace with your verified Resend domain email
 const subject = 'Thank You for Contacting Tabor Digital Solutions!';
 
+function corsHeaders() {
+  return {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+  };
+}
+
 serve(async (req) => {
+  // Handle preflight request
+  if (req.method === 'OPTIONS') {
+    return new Response(null, { status: 204, headers: corsHeaders() });
+  }
+
   try {
     const { record } = await req.json();
 
@@ -22,7 +35,7 @@ serve(async (req) => {
     if (!record || !record.email || !record.name) {
       return new Response(JSON.stringify({ error: 'Missing contact data' }), {
         status: 400,
-        headers: { 'Content-Type': 'application/json' },
+        headers: { ...corsHeaders(), 'Content-Type': 'application/json' },
       });
     }
 
@@ -64,18 +77,18 @@ serve(async (req) => {
       const errorText = await response.text();
       return new Response(JSON.stringify({ error: errorText }), {
         status: 500,
-        headers: { 'Content-Type': 'application/json' },
+        headers: { ...corsHeaders(), 'Content-Type': 'application/json' },
       });
     }
 
     return new Response(JSON.stringify({ message: `Email sent to ${email}` }), {
       status: 200,
-      headers: { 'Content-Type': 'application/json' },
+      headers: { ...corsHeaders(), 'Content-Type': 'application/json' },
     });
   } catch (err) {
     return new Response(String(err?.message ?? err), {
       status: 500,
-      headers: { 'Content-Type': 'application/json' },
+      headers: { ...corsHeaders(), 'Content-Type': 'application/json' },
     });
   }
 });
