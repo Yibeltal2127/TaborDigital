@@ -24,7 +24,20 @@ const Footer = () => {
       // Insert into Supabase
       const { error: supabaseError } = await import('../lib/supabase').then(m => m.supabase)
         .then(supabase => supabase.from('newsletter_subscribers').insert([{ email }]));
-      if (supabaseError) throw supabaseError;
+      if (supabaseError) {
+        // Handle duplicate email error
+        if (
+          supabaseError.code === '23505' || // Postgres unique violation
+          supabaseError.message?.toLowerCase().includes('duplicate') ||
+          supabaseError.status === 409
+        ) {
+          setError('This email is already subscribed to our newsletter.');
+        } else {
+          setError('Failed. Try again later.');
+        }
+        setIsSubmitting(false);
+        return;
+      }
       // Call Edge Function
       await fetch('https://wdvhnchretvgqyrwpasr.functions.supabase.co/send-newsletter-welcome', {
         method: 'POST',
@@ -45,45 +58,62 @@ const Footer = () => {
       <div className="container mx-auto px-4 md:px-6">
         {/* Newsletter Bar - right-aligned, minimal, no background */}
         <div className="flex justify-end mb-8">
-          <form
-            onSubmit={handleNewsletter}
-            className="flex items-center gap-3"
-            style={{ maxWidth: '480px' }}
-          >
-            <div className="flex flex-col justify-center mr-2 min-w-[180px]">
-              <span className="flex items-center gap-1 text-[#FFD166] tracking-wide italic text-base" style={{ fontWeight: 400 }}>
-                <Mail size={18} className="inline-block mb-0.5" />
-                Stay in the Loop
-              </span>
-              <span className="text-gray-400 text-xs mt-0.5" style={{ letterSpacing: '0.01em' }}>
-                Subscribe for updates, tips, and exclusive offers.
-              </span>
+          <div className="w-full max-w-2xl mx-auto">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 bg-white bg-opacity-5 rounded-lg p-4 shadow">
+              {/* Left: Text Block */}
+              <div className="flex-1 flex flex-col items-start justify-center min-w-[180px]">
+                <span className="flex items-center gap-1 text-[#FFD166] tracking-wide italic text-base font-semibold mb-1">
+                  <Mail size={20} className="inline-block mb-0.5" />
+                  Stay in the Loop
+                </span>
+                <span className="text-gray-300 text-xs md:text-sm" style={{ letterSpacing: '0.01em' }}>
+                  Subscribe for updates, tips, and exclusive offers.
+                </span>
+              </div>
+              {/* Right: Subscription Form */}
+              <form
+                onSubmit={handleNewsletter}
+                className="flex flex-col items-center w-full md:w-auto"
+                style={{ minWidth: 260 }}
+              >
+                <div className="flex w-full">
+                  <input
+                    type="email"
+                    placeholder="Your Email Address"
+                    className="px-3 py-2 rounded-l border-none focus:ring-2 focus:ring-[#FF6B35] text-sm text-gray-800 min-w-[140px] md:min-w-[180px] bg-white w-full"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    required
+                    disabled={isSubmitting}
+                    style={{ borderTopRightRadius: 0, borderBottomRightRadius: 0 }}
+                  />
+                  <button
+                    type="submit"
+                    className="bg-[#FF6B35] hover:bg-[#4ECDC4] text-white font-semibold px-4 py-2 rounded-r transition-all text-sm"
+                    disabled={isSubmitting}
+                    style={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}
+                  >
+                    {isSubmitting ? 'Subscribing...' : 'Subscribe'}
+                  </button>
+                </div>
+                {/* Centered feedback messages */}
+                {(success || error) && (
+                  <div className="w-full flex justify-center mt-2">
+                    {success && (
+                      <span className="bg-green-100 text-green-700 px-3 py-1 rounded shadow text-xs font-medium text-center animate-fade-in">
+                        Thank you for subscribing!
+                      </span>
+                    )}
+                    {error && (
+                      <span className="bg-red-100 text-red-700 px-3 py-1 rounded shadow text-xs font-medium text-center animate-fade-in">
+                        {error}
+                      </span>
+                    )}
+                  </div>
+                )}
+              </form>
             </div>
-            <input
-              type="email"
-              placeholder="Your Email Address"
-              className="px-3 py-2 rounded-l border-none focus:ring-2 focus:ring-[#FF6B35] text-sm text-gray-800 min-w-[140px] md:min-w-[180px] bg-white"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              required
-              disabled={isSubmitting}
-              style={{ borderTopRightRadius: 0, borderBottomRightRadius: 0 }}
-            />
-            <button
-              type="submit"
-              className="bg-[#FF6B35] hover:bg-[#4ECDC4] text-white font-semibold px-4 py-2 rounded-r transition-all text-sm"
-              disabled={isSubmitting}
-              style={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}
-            >
-              {isSubmitting ? 'Subscribing...' : 'Subscribe'}
-            </button>
-            {success && (
-              <span className="ml-3 text-green-200 text-xs font-medium">Thank you!</span>
-            )}
-            {error && (
-              <span className="ml-3 text-red-200 text-xs font-medium">{error}</span>
-            )}
-          </form>
+          </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
