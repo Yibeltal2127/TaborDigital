@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, User, ArrowRight, Clock, Tag, Search, Loader, ChevronDown, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { fetchBlogPosts, fetchBlogCategories, subscribeToNewsletter, type BlogPost, type BlogCategory } from '../lib/blog';
+import { fetchBlogPosts, fetchBlogCategories, type BlogPost, type BlogCategory } from '../lib/blog';
 
 const BlogCard = ({ post, isExpanded, onToggleExpand }: { 
   post: BlogPost; 
@@ -114,12 +114,6 @@ const BlogSection = () => {
   const [categories, setCategories] = useState<BlogCategory[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
-  const [newsletterEmail, setNewsletterEmail] = useState('');
-  const [newsletterStatus, setNewsletterStatus] = useState<{
-    type: 'success' | 'error' | null;
-    message: string;
-  }>({ type: null, message: '' });
-  const [newsletterLoading, setNewsletterLoading] = useState(false);
 
   useEffect(() => {
     loadBlogData();
@@ -150,33 +144,6 @@ const BlogSection = () => {
       newExpandedPosts.add(postId);
     }
     setExpandedPosts(newExpandedPosts);
-  };
-
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!newsletterEmail.trim()) return;
-
-    setNewsletterLoading(true);
-    setNewsletterStatus({ type: null, message: '' });
-
-    try {
-      const result = await subscribeToNewsletter(newsletterEmail);
-      setNewsletterStatus({
-        type: result.success ? 'success' : 'error',
-        message: result.message
-      });
-      
-      if (result.success) {
-        setNewsletterEmail('');
-      }
-    } catch (error) {
-      setNewsletterStatus({
-        type: 'error',
-        message: 'Failed to subscribe. Please try again later.'
-      });
-    } finally {
-      setNewsletterLoading(false);
-    }
   };
 
   const filteredPosts = blogPosts.filter(post => {
@@ -288,51 +255,6 @@ const BlogSection = () => {
             View All Posts
             <ArrowRight className="ml-2" size={18} />
           </Link>
-        </div>
-        
-        {/* Newsletter Signup */}
-        <div className="mt-16 bg-white rounded-2xl shadow-lg p-8 md:p-12 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Stay Updated with Our Newsletter
-          </h3>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Get the latest insights, tips, and updates delivered directly to your inbox. Join our community of innovators and stay ahead of the curve.
-          </p>
-          
-          {newsletterStatus.message && (
-            <div className={`mb-4 p-3 rounded-lg ${
-              newsletterStatus.type === 'success' 
-                ? 'bg-green-50 text-green-700' 
-                : 'bg-red-50 text-red-700'
-            }`}>
-              {newsletterStatus.message}
-            </div>
-          )}
-          
-          <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              value={newsletterEmail}
-              onChange={(e) => setNewsletterEmail(e.target.value)}
-              required
-              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF6B35] focus:border-[#FF6B35] outline-none"
-            />
-            <button 
-              type="submit"
-              disabled={newsletterLoading}
-              className="bg-[#FF6B35] hover:bg-[#4ECDC4] text-white px-6 py-3 rounded-lg font-medium transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
-            >
-              {newsletterLoading ? (
-                <>
-                  <Loader className="animate-spin mr-2" size={16} />
-                  Subscribing...
-                </>
-              ) : (
-                'Subscribe Now'
-              )}
-            </button>
-          </form>
         </div>
       </div>
     </section>
