@@ -27,11 +27,11 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, onQuickAction, onSat
             <p className="text-gray-700">{message.text}</p>
             <div className="space-y-2">
               <a 
-                href="tel:+251911234567"
+                href="tel:+251910083733"
                 className="flex items-center text-[#FF6B35] hover:text-[#4ECDC4] transition-colors"
               >
                 <Phone size={16} className="mr-2" />
-                +251 91 123 4567
+                +251910083733
               </a>
               <a 
                 href="mailto:contact@tabordigital.com"

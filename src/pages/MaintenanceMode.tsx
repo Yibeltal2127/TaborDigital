@@ -76,7 +76,7 @@ const MaintenanceMode = () => {
     },
     {
       type: 'Phone',
-      value: '+251 91 123 4567',
+      value: '+251910083733',
       icon: Phone,
       href: 'tel:+251911234567'
     }

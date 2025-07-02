@@ -251,7 +251,7 @@ const CookiePolicy = () => {
               </p>
               <div className="space-y-2">
                 <p><strong>Email:</strong> privacy@tabordigital.com</p>
-                <p><strong>Phone:</strong> +251 91 123 4567</p>
+                <p><strong>Phone:</strong> +251910083733</p>
                 <p><strong>Address:</strong> Bole Road, Addis Ababa, Ethiopia</p>
               </div>
               <p className="mt-4 text-sm opacity-90">

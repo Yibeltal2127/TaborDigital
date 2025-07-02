@@ -46,7 +46,7 @@ export const chatbotResponses = {
     packages: "We offer flexible pricing packages:\n\n🌟 Starter Package: Basic services for small businesses\n🚀 Growth Package: Comprehensive solutions for expanding companies\n💎 Enterprise Package: Full-service solutions for large organizations\n\nEach package is customized to your needs. Shall I help you find the right fit?"
   },
   
-  contact: "Here's how you can reach us:\n\n📞 Phone: +251 91 123 4567\n📧 Email: contact@tabordigital.com\n📍 Office: Bole Road, Addis Ababa\n🕒 Hours: Mon-Fri 9AM-6PM, Sat 10AM-4PM\n\nWould you like to schedule a free consultation or get a project quote?",
+  contact: "Here's how you can reach us:\n\n📞 Phone: +251910083733\n📧 Email: contact@tabordigital.com\n📍 Office: Bole Road, Addis Ababa\n🕒 Hours: Mon-Fri 9AM-6PM, Sat 10AM-4PM\n\nWould you like to schedule a free consultation or get a project quote?",
   
   portfolio: "I'd love to show you our work! You can view our complete portfolio at our website's portfolio section. We've completed 500+ projects across all our service areas.\n\nSome highlights:\n• 200+ websites developed\n• 150+ brand identities created\n• 100+ marketing campaigns\n• 50+ interior design projects\n\nWould you like me to direct you to specific portfolio categories?",
   

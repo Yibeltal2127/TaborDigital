@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { RefObject } from 'react';
 import { CheckCircle, Users, Globe, Sparkles, MessageCircle } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-const FeatureItem = ({ icon, title, description, index }) => {
+interface FeatureItemProps {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  index: number;
+}
+
+const FeatureItem: React.FC<FeatureItemProps> = ({ icon, title, description, index }) => {
   const Icon = icon;
   
   return (
@@ -22,8 +29,8 @@ const FeatureItem = ({ icon, title, description, index }) => {
 };
 
 const WhyChooseUs = () => {
-  const { elementRef: imageRef, isVisible: imageVisible } = useScrollAnimation({ threshold: 0.3 });
-  const { elementRef: contentRef, isVisible: contentVisible } = useScrollAnimation({ threshold: 0.2 });
+  const { elementRef: imageRef, isVisible: imageVisible } = useScrollAnimation({ threshold: 0.3 }) as { elementRef: RefObject<HTMLDivElement>, isVisible: boolean };
+  const { elementRef: contentRef, isVisible: contentVisible } = useScrollAnimation({ threshold: 0.2 }) as { elementRef: RefObject<HTMLDivElement>, isVisible: boolean };
 
   const features = [
     {
@@ -58,12 +65,12 @@ const WhyChooseUs = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col lg:flex-row gap-12 items-center">
           <div 
-            ref={imageRef}
+            ref={imageRef as RefObject<HTMLDivElement>}
             className={`lg:w-1/2 ${imageVisible ? 'animate-fade-in-left' : 'opacity-0'}`}
           >
             <div className="relative">
               <img 
-                src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                src="https://res.cloudinary.com/dbn8jx8bh/image/upload/v1751367782/ta_hero_qgx3l5.jpg" 
                 alt="Team collaboration" 
                 className="rounded-lg shadow-xl object-cover w-full h-[500px] hover:scale-105 transition-transform duration-700"
               />
@@ -74,7 +81,7 @@ const WhyChooseUs = () => {
           </div>
           
           <div 
-            ref={contentRef}
+            ref={contentRef as RefObject<HTMLDivElement>}
             className={`lg:w-1/2 ${contentVisible ? 'animate-fade-in-right' : 'opacity-0'}`}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#2C3E50]">Why Choose Tabor?</h2>

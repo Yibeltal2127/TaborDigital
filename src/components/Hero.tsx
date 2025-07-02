@@ -46,7 +46,7 @@ const Hero = () => {
           >
             <div className="relative">
               <img 
-                src="https://images.pexels.com/photos/3182811/pexels-photo-3182811.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                src="https://res.cloudinary.com/dlv8bqq37/image/upload/v1751367081/hero_new_e1prah.png" 
                 alt="Team collaboration on digital projects" 
                 className="rounded-lg shadow-2xl object-cover w-full h-[500px] hover:scale-105 transition-transform duration-700 ease-out"
               />

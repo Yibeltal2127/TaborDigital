@@ -200,7 +200,7 @@ const ThankYou = () => {
             <div className="flex items-center justify-center space-x-6 text-sm">
               <div className="flex items-center">
                 <Phone size={16} className="mr-1" />
-                <span>+251 91 123 4567</span>
+                <span>+251910083733</span>
               </div>
               <div className="flex items-center">
                 <Mail size={16} className="mr-1" />

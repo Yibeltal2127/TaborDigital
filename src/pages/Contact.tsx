@@ -26,15 +26,15 @@ const Contact = () => {
       icon: Phone,
       title: 'Call Us',
       description: 'Speak directly with our team during business hours',
-      contact: '+251 91 123 4567',
-      action: 'tel:+251911234567'
+      contact: '+251910083733',
+      action: 'tel:+251910083733'
     },
     {
       icon: MessageCircle,
       title: 'WhatsApp',
       description: 'Quick questions? Message us on WhatsApp',
-      contact: '+251 91 123 4567',
-      action: 'https://wa.me/251911234567'
+      contact: '+251910083733',
+      action: 'https://wa.me/251910083733'
     },
     {
       icon: MapPin,
