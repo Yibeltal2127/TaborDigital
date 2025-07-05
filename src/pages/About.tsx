@@ -120,9 +120,9 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                src="https://res.cloudinary.com/dbn8jx8bh/image/upload/v1751367782/ta_hero_qgx3l5.jpg" 
                 alt="Our Mission" 
-                className="rounded-lg shadow-xl"
+                className="rounded-lg shadow-xl w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover"
                 loading="lazy"
               />
             </div>

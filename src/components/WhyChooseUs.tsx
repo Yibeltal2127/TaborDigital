@@ -72,11 +72,11 @@ const WhyChooseUs = () => {
               <img 
                 src="https://res.cloudinary.com/dbn8jx8bh/image/upload/v1751367782/ta_hero_qgx3l5.jpg" 
                 alt="Team collaboration" 
-                className="rounded-lg shadow-xl object-cover w-full h-[500px] hover:scale-105 transition-transform duration-700"
+                className="rounded-lg shadow-xl object-cover w-full h-[300px] md:h-[400px] lg:h-[500px] hover:scale-105 transition-transform duration-700"
               />
               {/* Floating decorative elements */}
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-[#FF6B35] to-[#4ECDC4] rounded-full opacity-20 animate-float"></div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-[#4ECDC4] rounded-full opacity-30 animate-bounce-gentle"></div>
+              <div className="absolute -top-6 -right-6 w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-[#FF6B35] to-[#4ECDC4] rounded-full opacity-20 animate-float"></div>
+              <div className="absolute -bottom-4 -left-4 w-12 h-12 md:w-16 md:h-16 bg-[#4ECDC4] rounded-full opacity-30 animate-bounce-gentle"></div>
             </div>
           </div>
           

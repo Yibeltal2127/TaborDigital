@@ -346,7 +346,7 @@ const InteriorDesignPortfolio = () => {
                       <img 
                         src={project.afterImage} 
                         alt={`${project.title} - After`}
-                        className="w-full h-full object-cover"
+                        className="w-full h-24 md:h-32 object-cover"
                       />
                       <div className="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-medium">
                         After
@@ -428,7 +428,7 @@ const InteriorDesignPortfolio = () => {
                   <img 
                     src={selectedProject.afterImage} 
                     alt={selectedProject.title}
-                    className="w-full h-96 lg:h-full object-cover"
+                    className="w-full h-64 md:h-96 lg:h-full object-cover"
                   />
                   <button
                     onClick={() => setSelectedProject(null)}
@@ -611,7 +611,7 @@ const InteriorDesignPortfolio = () => {
                   <img 
                     src={project.afterImage} 
                     alt={project.title}
-                    className="w-full h-32 object-cover rounded-lg"
+                    className="w-full h-24 md:h-32 object-cover rounded-lg"
                   />
                 </div>
                 

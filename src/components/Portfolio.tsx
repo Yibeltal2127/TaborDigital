@@ -37,7 +37,7 @@ const ProjectCard = ({ project }: { project: PortfolioProject }) => {
   return (
     <div className="relative overflow-hidden rounded-lg shadow-md group bg-white">
       {/* Image Gallery */}
-      <div className="relative h-64 overflow-hidden">
+      <div className="relative h-48 md:h-64 overflow-hidden">
         <img 
           src={allImages[currentImageIndex]} 
           alt={project.title} 

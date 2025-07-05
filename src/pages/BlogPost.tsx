@@ -223,7 +223,7 @@ const BlogPost = () => {
             <img 
               src={post.featured_image} 
               alt={post.title}
-              className="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg"
+              className="w-full h-48 md:h-64 lg:h-96 object-cover rounded-lg shadow-lg"
             />
           </div>
         </div>
@@ -275,7 +275,7 @@ const BlogPost = () => {
                     <img 
                       src={relatedPost.featured_image} 
                       alt={relatedPost.title}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-40 md:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="p-6">
                       <span className="bg-[#FF6B35] text-white px-2 py-1 rounded text-xs font-medium capitalize">

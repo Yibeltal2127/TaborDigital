@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { RefObject } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Hero = () => {
-  const { elementRef: heroRef, isVisible: heroVisible } = useScrollAnimation();
-  const { elementRef: imageRef, isVisible: imageVisible } = useScrollAnimation({ threshold: 0.2 });
+  const { elementRef: heroRef, isVisible: heroVisible } = useScrollAnimation() as { elementRef: RefObject<HTMLDivElement>, isVisible: boolean };
+  const { elementRef: imageRef, isVisible: imageVisible } = useScrollAnimation({ threshold: 0.2 }) as { elementRef: RefObject<HTMLDivElement>, isVisible: boolean };
 
   return (
     <section id="hero" className="min-h-screen flex items-center bg-gradient-to-br from-[#F7F9F9] to-white pt-20 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 py-12 md:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div 
-            ref={heroRef}
+            ref={heroRef as RefObject<HTMLDivElement>}
             className={`space-y-6 ${heroVisible ? 'animate-fade-in-left' : 'opacity-0'}`}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#2C3E50] leading-tight">
@@ -41,18 +41,18 @@ const Hero = () => {
             </div>
           </div>
           <div 
-            ref={imageRef}
-            className={`hidden lg:block ${imageVisible ? 'animate-fade-in-right' : 'opacity-0'}`}
+            ref={imageRef as RefObject<HTMLDivElement>}
+            className={`${imageVisible ? 'animate-fade-in-right' : 'opacity-0'}`}
           >
             <div className="relative">
               <img 
                 src="https://res.cloudinary.com/dlv8bqq37/image/upload/v1751367081/hero_new_e1prah.png" 
                 alt="Team collaboration on digital projects" 
-                className="rounded-lg shadow-2xl object-cover w-full h-[500px] hover:scale-105 transition-transform duration-700 ease-out"
+                className="rounded-lg shadow-2xl object-cover w-full h-[300px] md:h-[400px] lg:h-[500px] hover:scale-105 transition-transform duration-700 ease-out"
               />
               {/* Floating elements for visual interest */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-[#FF6B35] rounded-full opacity-20 animate-float"></div>
-              <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-[#4ECDC4] rounded-full opacity-30 animate-bounce-gentle"></div>
+              <div className="absolute -top-4 -right-4 w-16 h-16 md:w-20 md:h-20 bg-[#FF6B35] rounded-full opacity-20 animate-float"></div>
+              <div className="absolute -bottom-6 -left-6 w-12 h-12 md:w-16 md:h-16 bg-[#4ECDC4] rounded-full opacity-30 animate-bounce-gentle"></div>
             </div>
           </div>
         </div>

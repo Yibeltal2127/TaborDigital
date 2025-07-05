@@ -545,7 +545,7 @@ const EngineeringDesign = () => {
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-40 md:h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-[#FF6B35] text-white px-3 py-1 rounded-full text-sm font-medium">

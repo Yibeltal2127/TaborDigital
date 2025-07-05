@@ -23,7 +23,7 @@ const BlogCard = ({ post }: { post: BlogPost }) => {
         <img 
           src={post.featured_image} 
           alt={post.title}
-          className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-40 md:h-48 object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
         />
         <div className="absolute top-4 left-4">

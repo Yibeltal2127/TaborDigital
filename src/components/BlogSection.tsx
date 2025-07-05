@@ -34,7 +34,7 @@ const BlogCard = ({ post, isExpanded, onToggleExpand }: {
         <img 
           src={post.featured_image} 
           alt={post.title}
-          className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-40 md:h-48 object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute top-4 left-4">
           <span className="bg-[#FF6B35] text-white px-3 py-1 rounded-full text-sm font-medium capitalize">
