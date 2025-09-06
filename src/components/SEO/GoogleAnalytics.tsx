@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 interface GoogleAnalyticsProps {
@@ -13,34 +13,12 @@ declare global {
 }
 
 const GoogleAnalytics: React.FC<GoogleAnalyticsProps> = ({ 
-  measurementId = 'G-XXXXXXXXXX' // Replace with your actual GA4 measurement ID
+  measurementId = import.meta.env.VITE_GA_ID || 'G-XXXXXXXXXX'
 }) => {
-  useEffect(() => {
-    // Load Google Analytics script
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
-    document.head.appendChild(script);
-
-    // Initialize gtag
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function() {
-      window.dataLayer.push(arguments);
-    };
-    window.gtag('js', new Date());
-    window.gtag('config', measurementId, {
-      page_title: document.title,
-      page_location: window.location.href,
-    });
-
-    return () => {
-      // Cleanup
-      document.head.removeChild(script);
-    };
-  }, [measurementId]);
-
   return (
     <Helmet>
+      {/* Google tag (gtag.js) */}
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
       <script>
         {`
           window.dataLayer = window.dataLayer || [];

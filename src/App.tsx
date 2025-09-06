@@ -146,7 +146,7 @@ function App() {
 
   return (
     <SEOProvider>
-      <GoogleAnalytics measurementId="G-XXXXXXXXXX" />
+      <GoogleAnalytics />
       <PreloadCriticalResources />
       <ErrorBoundary>
         <Router>
