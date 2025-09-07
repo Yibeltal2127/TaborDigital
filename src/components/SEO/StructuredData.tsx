@@ -13,10 +13,10 @@ const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) => {
         return {
           '@context': 'https://schema.org',
           '@type': 'Organization',
-          name: 'Tabor Digital Solutions',
+          name: 'Tabor Engineering & Digital Solutions',
           url: 'https://tabordigital.com',
           logo: 'https://tabordigital.com/tabordigitallogo.jpg',
-          description: 'Transform your business with our comprehensive digital solutions. We offer graphic design, web development, digital marketing, business consulting, interior design, and engineering services in Ethiopia.',
+          description: 'Transform your business with our comprehensive engineering and digital solutions. We offer architectural design, structural analysis, MEP design, interior design, web development, graphic design, digital marketing, and business consulting services in Ethiopia.',
           address: {
             '@type': 'PostalAddress',
             addressLocality: 'Addis Ababa',
@@ -40,12 +40,12 @@ const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) => {
         return {
           '@context': 'https://schema.org',
           '@type': 'WebSite',
-          name: 'Tabor Digital Solutions',
+          name: 'Tabor Engineering & Digital Solutions',
           url: 'https://tabordigital.com',
           description: 'Professional digital solutions in Ethiopia',
           publisher: {
             '@type': 'Organization',
-            name: 'Tabor Digital Solutions'
+            name: 'Tabor Engineering & Digital Solutions'
           }
         };
 
@@ -62,7 +62,7 @@ const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) => {
           },
           publisher: {
             '@type': 'Organization',
-            name: 'Tabor Digital Solutions',
+            name: 'Tabor Engineering & Digital Solutions',
             logo: {
               '@type': 'ImageObject',
               url: 'https://tabordigital.com/tabordigitallogo.jpg'
@@ -80,7 +80,7 @@ const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) => {
           description: data.description as string,
           provider: {
             '@type': 'Organization',
-            name: 'Tabor Digital Solutions'
+            name: 'Tabor Engineering & Digital Solutions'
           },
           areaServed: {
             '@type': 'Country',

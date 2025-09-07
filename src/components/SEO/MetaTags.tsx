@@ -18,13 +18,13 @@ interface MetaTagsProps {
 }
 
 const MetaTags: React.FC<MetaTagsProps> = ({
-  title = 'Tabor Digital Solutions - Design, Development & Digital Innovation',
-  description = 'Transform your business with our comprehensive digital solutions. We offer graphic design, web development, digital marketing, business consulting, interior design, and engineering services in Ethiopia.',
-  keywords = ['digital agency', 'web development', 'graphic design', 'digital marketing', 'business consulting', 'interior design', 'engineering design', 'Ethiopia', 'Addis Ababa'],
+  title = 'Tabor Engineering & Digital Solutions - Engineering, Design, Development & Digital Innovation',
+  description = 'Transform your business with our comprehensive engineering and digital solutions. We offer architectural design, structural analysis, MEP design, interior design, web development, graphic design, digital marketing, and business consulting services in Ethiopia.',
+  keywords = ['engineering solutions', 'architectural design', 'structural analysis', 'MEP design', 'web development', 'graphic design', 'digital marketing', 'business consulting', 'interior design', 'Ethiopia', 'Addis Ababa'],
   image = 'https://images.pexels.com/photos/3182811/pexels-photo-3182811.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=1',
   url = 'https://tabordigital.com',
   type = 'website',
-  author = 'Tabor Digital Solutions',
+  author = 'Tabor Engineering & Digital Solutions',
   publishedTime,
   modifiedTime,
   section,
@@ -32,7 +32,7 @@ const MetaTags: React.FC<MetaTagsProps> = ({
   noIndex = false,
   canonical
 }) => {
-  const siteName = 'Tabor Digital Solutions';
+  const siteName = 'Tabor Engineering & Digital Solutions';
   const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
   const currentUrl = canonical || url;
 

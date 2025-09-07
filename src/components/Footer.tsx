@@ -121,7 +121,7 @@ const Footer = () => {
             <div className="flex items-center space-x-3 mb-4">
               <img 
                 src="/tabordigitallogo.jpg" 
-                alt="Tabor Digital Solutions Logo" 
+                alt="Tabor Engineering & Digital Solutions Logo" 
                 className="w-8 h-8 object-contain"
                 onError={(e) => {
                   e.currentTarget.src = '/tabordigitallogo.jpg';
@@ -236,7 +236,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
-          <p>© {new Date().getFullYear()} Tabor Digital Solutions. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Tabor Engineering & Digital Solutions. All rights reserved.</p>
         </div>
       </div>
     </footer>

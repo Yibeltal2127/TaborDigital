@@ -13,62 +13,62 @@ const About = () => {
 
   const pageTitle = generatePageTitle('About Us - Our Story, Team & Values');
   const pageDescription = generateMetaDescription(
-    'Learn about Tabor Digital Solutions - our story, mission, values, and the passionate team behind Ethiopia\'s leading digital agency. Discover how we\'ve helped 200+ businesses grow since 2020.'
+    'Learn about Tabor Engineering & Digital Solutions - our story, mission, values, and the passionate team behind Ethiopia\'s leading engineering and digital agency. Discover how we\'ve helped businesses grow with over 5 years of experience.'
   );
   const pageKeywords = generateKeywords(['about us', 'our story', 'team', 'mission', 'values', 'company history']);
 
   const achievements = [
     {
       icon: Users,
-      number: "200+",
-      label: "Happy Clients",
-      description: "Businesses we've helped grow"
+      number: "5+",
+      label: "Years Experience",
+      description: "As Eagle Consulting Architects and Engineers"
     },
     {
       icon: Award,
-      number: "500+",
+      number: "100+",
       label: "Projects Completed",
-      description: "Successful deliveries across all services"
+      description: "Engineering and digital solutions delivered"
     },
     {
       icon: Globe,
-      number: "15+",
-      label: "Cities Served",
-      description: "Across Ethiopia and beyond"
+      number: "Africa+",
+      label: "Regional Focus",
+      description: "Expanding across Africa and beyond"
     },
     {
       icon: TrendingUp,
-      number: "95%",
+      number: "100%",
       label: "Client Satisfaction",
-      description: "Based on project feedback"
+      description: "Trusted partner in growth journey"
     }
   ];
 
   const milestones = [
     {
-      year: "2020",
-      title: "Company Founded",
-      description: "Started with a vision to empower Ethiopian businesses through digital innovation"
+      year: "2019",
+      title: "Eagle Consulting Founded",
+      description: "Started as Eagle Consulting Architects and Engineers with focus on precision and client trust"
     },
     {
-      year: "2021",
-      title: "First 50 Clients",
-      description: "Reached our first major milestone with diverse client portfolio"
+      year: "2020",
+      title: "Engineering Excellence",
+      description: "Established expertise in architectural design, structural analysis, and MEP design"
     },
     {
       year: "2022",
-      title: "Team Expansion",
-      description: "Grew to a team of 15+ specialists across all service areas"
+      title: "Digital Expansion",
+      description: "Expanded into web development, graphic design, and digital marketing services"
     },
     {
       year: "2023",
-      title: "Regional Recognition",
-      description: "Became a leading digital agency in the Horn of Africa region"
+      title: "Integrated Solutions",
+      description: "Became Tabor Engineering & Digital Solutions, combining engineering and technology"
     },
     {
       year: "2024",
-      title: "Innovation Hub",
-      description: "Launched our innovation lab for emerging technologies"
+      title: "Regional Growth",
+      description: "Expanding across Africa with comprehensive engineering and digital solutions"
     }
   ];
 
@@ -92,11 +92,10 @@ const About = () => {
         <div className="container mx-auto px-4 py-16">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              About Tabor Digital Solutions
+              About Tabor Engineering & Digital Solutions
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              We're more than just a digital agency. We're your partners in growth, innovation, and success. 
-              Since 2020, we've been helping Ethiopian businesses transform their operations and reach new heights through technology and design.
+              With over five years of experience as Eagle Consulting Architects and Engineers, we built our foundation on precision, creativity, and client trust. Today, as Tabor Engineering & Digital Solutions, we have expanded our expertise beyond engineering into the digital space, creating a company that seamlessly integrates engineering design, technology, and business strategy.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {achievements.map((achievement, index) => (
@@ -132,25 +131,23 @@ const About = () => {
               <div className="mb-8">
                 <h3 className="text-xl font-bold text-[#FF6B35] mb-3">Mission</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  To empower Ethiopian businesses with innovative digital solutions that drive growth, 
-                  enhance efficiency, and create lasting value for our clients and their communities.
+                  To empower businesses and individuals with innovative engineering and digital solutions that blend creativity, precision, and technology—driving growth, efficiency, and long-term success.
                 </p>
               </div>
               
               <div className="mb-8">
                 <h3 className="text-xl font-bold text-[#FF6B35] mb-3">Vision</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  To be the leading digital transformation partner in Ethiopia, recognized for our 
-                  excellence, innovation, and commitment to client success.
+                  To become a leading engineering and digital solutions provider in Africa and beyond, recognized for transforming challenges into opportunities and enabling clients to thrive in an ever-evolving world.
                 </p>
               </div>
               
               <div className="space-y-3">
                 {[
-                  "Client-first approach in everything we do",
-                  "Continuous innovation and learning",
-                  "Sustainable business practices",
-                  "Community impact and social responsibility"
+                  "From architectural design to web development",
+                  "Structural analysis and digital marketing",
+                  "MEP design and business consulting",
+                  "Interior design and app development"
                 ].map((principle, index) => (
                   <div key={index} className="flex items-center">
                     <CheckCircle className="text-[#FF6B35] mr-3" size={20} />
@@ -167,22 +164,22 @@ const About = () => {
       <section id="values" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Core Values</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Values</h2>
             <p className="text-xl text-gray-600 mb-8">
-              At Tabor Digital Solutions, our values guide every decision and action. We believe in:
+              We are a multidisciplinary team of engineers, designers, developers, and strategists, united by a shared passion for building and innovating. Every project we take on is approached with a balance of technical expertise, creativity, and business insight. More than service providers, we are partners in your growth journey.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
               <div>
-                <h3 className="text-xl font-semibold text-[#FF6B35] mb-2">Integrity</h3>
-                <p className="text-gray-700 mb-4">We are honest, transparent, and committed to doing what's best for our clients and our company.</p>
-                <h3 className="text-xl font-semibold text-[#FF6B35] mb-2">Innovation</h3>
-                <p className="text-gray-700 mb-4">We constantly seek new and better ways to serve our clients and grow our business.</p>
+                <h3 className="text-xl font-semibold text-[#FF6B35] mb-2">Innovation with Purpose</h3>
+                <p className="text-gray-700 mb-4">Delivering solutions that are practical, scalable, and future-ready.</p>
+                <h3 className="text-xl font-semibold text-[#FF6B35] mb-2">Excellence in Execution</h3>
+                <p className="text-gray-700 mb-4">Upholding the highest standards in both engineering and digital services.</p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-[#FF6B35] mb-2">Collaboration</h3>
-                <p className="text-gray-700 mb-4">We work together, across boundaries, to meet the needs of our customers and to help our company win.</p>
-                <h3 className="text-xl font-semibold text-[#FF6B35] mb-2">Excellence</h3>
-                <p className="text-gray-700 mb-4">We strive for excellence in everything we do, delivering outstanding results for our clients.</p>
+                <h3 className="text-xl font-semibold text-[#FF6B35] mb-2">Client-Centered Partnership</h3>
+                <p className="text-gray-700 mb-4">Building trust through transparency, collaboration, and measurable results.</p>
+                <h3 className="text-xl font-semibold text-[#FF6B35] mb-2">Sustainable Growth</h3>
+                <p className="text-gray-700 mb-4">Creating solutions that not only solve today's problems but prepare businesses for tomorrow.</p>
               </div>
             </div>
           </div>
@@ -195,7 +192,7 @@ const About = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Journey</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From a small startup to a leading digital agency, here's how we've grown and evolved over the years.
+              From Eagle Consulting Architects and Engineers to Tabor Engineering & Digital Solutions, here's how we've evolved and expanded our expertise over the years.
             </p>
           </div>
           
@@ -234,7 +231,7 @@ const About = () => {
             Ready to Start Your Journey with Us?
           </h2>
           <p className="text-white text-xl mb-8 max-w-2xl mx-auto">
-            Let's work together to transform your business and achieve your goals.
+            Tabor Engineering & Digital Solutions is more than a service provider—we are your trusted partner in engineering, technology, and business transformation.
           </p>
           <button className="bg-white text-[#FF6B35] hover:bg-[#4ECDC4] hover:text-white px-8 py-3 rounded-lg font-medium transition-colors">
             Get Started Today

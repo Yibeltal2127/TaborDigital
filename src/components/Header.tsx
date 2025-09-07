@@ -96,7 +96,7 @@ const Header = () => {
               {/* Logo Image */}
               <img 
                 src="/tabordigitallogo.jpg" 
-                alt="Tabor Digital Solutions Logo" 
+                alt="Tabor Engineering & Digital Solutions Logo" 
                 className="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-110"
                 onError={(e) => {
                   console.log('Logo failed to load, trying fallback');

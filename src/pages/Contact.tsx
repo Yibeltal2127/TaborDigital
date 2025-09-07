@@ -10,7 +10,7 @@ import { scrollToTop, scrollToSection } from '../utils/smoothScroll';
 const Contact = () => {
   const pageTitle = generatePageTitle('Contact Us - Get in Touch');
   const pageDescription = generateMetaDescription(
-    'Get in touch with Tabor Digital Solutions. Book a free consultation, request a quote, or discuss your project needs. We\'re here to help transform your business.'
+    'Get in touch with Tabor Engineering & Digital Solutions. Book a free consultation, request a quote, or discuss your project needs. We\'re here to help transform your business.'
   );
   const pageKeywords = generateKeywords(['contact', 'consultation', 'quote', 'get in touch', 'support']);
 

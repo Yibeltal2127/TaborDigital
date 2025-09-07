@@ -1,7 +1,7 @@
 // SEO utility functions
 
 export const generatePageTitle = (title: string, includeCompany: boolean = true): string => {
-  const companyName = 'Tabor Digital Solutions';
+  const companyName = 'Tabor Engineering & Digital Solutions';
   if (!includeCompany || title.includes(companyName)) {
     return title;
   }
@@ -30,7 +30,7 @@ export const generateKeywords = (baseKeywords: string[], additionalKeywords: str
     'engineering design',
     'Ethiopia',
     'Addis Ababa',
-    'Tabor Digital Solutions',
+    'Tabor Engineering & Digital Solutions',
     'cookie policy'
   ];
   

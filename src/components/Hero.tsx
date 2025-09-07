@@ -18,11 +18,11 @@ const Hero = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#2C3E50] leading-tight">
               Empowering Your Vision with{' '}
               <span className="text-[#FF6B35] bg-gradient-to-r from-[#FF6B35] to-[#4ECDC4] bg-clip-text text-transparent animate-pulse-glow">
-                Design, Development & Digital Innovation
+                Engineering, Design, Development & Digital Innovation
               </span>
             </h1>
             <p className="text-xl text-gray-600 max-w-xl leading-relaxed">
-              From graphic design to app development and engineering services — Tabor Digital Solutions delivers what your business needs to grow.
+              From architectural design to app development and digital solutions — Tabor Engineering & Digital Solutions delivers what your business needs to grow.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link 

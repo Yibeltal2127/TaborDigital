@@ -171,9 +171,9 @@ const TeamSection = () => {
             <div className="bg-gradient-to-r from-[#FF6B35] to-[#4ECDC4] p-8 rounded-2xl text-white">
               <h3 className="text-2xl font-bold mb-4">Our Story</h3>
               <p className="text-lg leading-relaxed">
-                Founded in 2020, Tabor Digital Solutions emerged from a vision to bridge the digital gap for Ethiopian businesses. 
-                We started as a small team of tech enthusiasts and have grown into a comprehensive digital agency, 
-                helping hundreds of businesses transform their operations and reach new heights through technology and design.
+                Founded in 2019 as Eagle Consulting Architects and Engineers, Tabor Engineering & Digital Solutions emerged from a vision to bridge the engineering and digital gap for Ethiopian businesses. 
+                We started as a small team of engineering enthusiasts and have grown into a comprehensive engineering and digital agency, 
+                helping hundreds of businesses transform their operations and reach new heights through engineering design, technology, and digital innovation.
               </p>
             </div>
           </div>
