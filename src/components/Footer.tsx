@@ -120,20 +120,20 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <img 
-                src="/tabordigitallogo.jpg" 
+                src="/tabor-engineering-logo.png" 
                 alt="Tabor Engineering & Digital Solutions Logo" 
-                className="w-8 h-8 object-contain"
+                className="w-12 h-12 object-contain"
                 onError={(e) => {
-                  e.currentTarget.src = '/tabordigitallogo.jpg';
+                  e.currentTarget.src = '/tabor-engineering-logo.png';
                 }}
               />
               <h3 className="text-xl font-bold">
                 <span className="text-[#FF6B35]">Tabor</span>{' '}
-                <span className="gradient-text">Digital Solutions</span>
+                <span className="gradient-text">Engineering & Digital Solutions</span>
               </h3>
             </div>
             <p className="mb-4 text-gray-400">
-              Empowering businesses through design, development, and digital innovation.
+              Empowering businesses through engineering design, development, and digital innovation.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform">

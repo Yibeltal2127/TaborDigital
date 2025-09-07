@@ -284,7 +284,7 @@ INSERT INTO portfolio_testimonials (
     'Director',
     'Ethiopian Artisans Collective',
     'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    'Tabor Digital Solutions transformed our vision into reality. The e-commerce platform they built has revolutionized how we connect Ethiopian artisans with global customers. Their understanding of our local needs combined with international standards was exceptional.',
+    'Tabor Engineering & Digital Solutions transformed our vision into reality. The e-commerce platform they built has revolutionized how we connect Ethiopian artisans with global customers. Their understanding of our local needs combined with international standards was exceptional.',
     5
   ),
   (

@@ -1,4 +1,4 @@
-# 📝 Tabor Digital - Content Template Guide
+# 📝 Tabor Engineering & Digital Solutions - Content Template Guide
 
 ## 🎯 Portfolio Projects Template
 

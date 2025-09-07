@@ -16,7 +16,7 @@ const NotFound = () => {
   return (
     <div className="min-h-screen bg-white">
       <MetaTags
-        title="Page Not Found - Tabor Digital Solutions"
+        title="Page Not Found - Tabor Engineering & Digital Solutions"
         description="The page you're looking for doesn't exist. Explore our services, portfolio, and blog instead."
         noIndex={true}
       />

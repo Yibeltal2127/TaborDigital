@@ -15,7 +15,7 @@ const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) => {
           '@type': 'Organization',
           name: 'Tabor Engineering & Digital Solutions',
           url: 'https://tabordigital.com',
-          logo: 'https://tabordigital.com/tabordigitallogo.jpg',
+          logo: 'https://tabordigital.com/tabor-engineering-logo.png',
           description: 'Transform your business with our comprehensive engineering and digital solutions. We offer architectural design, structural analysis, MEP design, interior design, web development, graphic design, digital marketing, and business consulting services in Ethiopia.',
           address: {
             '@type': 'PostalAddress',
@@ -65,7 +65,7 @@ const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) => {
             name: 'Tabor Engineering & Digital Solutions',
             logo: {
               '@type': 'ImageObject',
-              url: 'https://tabordigital.com/tabordigitallogo.jpg'
+              url: 'https://tabordigital.com/tabor-engineering-logo.png'
             }
           },
           datePublished: data.datePublished as string,

@@ -22,7 +22,7 @@ const ChatBot = () => {
     if (isOpen && messages.length === 0) {
       const welcomeMessage: ChatMessageType = {
         id: '1',
-        text: "👋 Hi there! I'm your digital assistant from Tabor Digital Solutions. I'm here to help you with information about our services, pricing, or any questions you might have. How can I assist you today?",
+        text: "👋 Hi there! I'm your digital assistant from Tabor Engineering & Digital Solutions. I'm here to help you with information about our services, pricing, or any questions you might have. How can I assist you today?",
         sender: 'bot',
         timestamp: new Date(),
         type: 'text'

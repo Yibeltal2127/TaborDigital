@@ -6,7 +6,7 @@ import { generatePageTitle, generateMetaDescription, generateKeywords, generateC
 const CookiePolicy = () => {
   const pageTitle = generatePageTitle('Cookie Policy - How We Use Cookies');
   const pageDescription = generateMetaDescription(
-    'Learn about how Tabor Digital Solutions uses cookies to improve your browsing experience and provide better services. Understand your cookie preferences and privacy choices.'
+    'Learn about how Tabor Engineering & Digital Solutions uses cookies to improve your browsing experience and provide better services. Understand your cookie preferences and privacy choices.'
   );
   const pageKeywords = generateKeywords(['cookie policy', 'cookies', 'privacy', 'tracking', 'website preferences']);
 
@@ -124,7 +124,7 @@ const CookiePolicy = () => {
             {/* Introduction */}
             <div className="mb-12">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                At Tabor Digital Solutions, we use cookies and similar technologies to improve your browsing experience, 
+                At Tabor Engineering & Digital Solutions, we use cookies and similar technologies to improve your browsing experience, 
                 analyze website traffic, and provide personalized content. This Cookie Policy explains what cookies are, 
                 how we use them, and how you can manage your preferences.
               </p>

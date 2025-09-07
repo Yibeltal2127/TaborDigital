@@ -6,7 +6,7 @@ import { generatePageTitle, generateMetaDescription, generateKeywords, generateC
 const PrivacyPolicy = () => {
   const pageTitle = generatePageTitle('Privacy Policy - How We Protect Your Data');
   const pageDescription = generateMetaDescription(
-    'Learn how Tabor Digital Solutions collects, uses, and protects your personal information. Our comprehensive privacy policy ensures your data security and privacy.'
+    'Learn how Tabor Engineering & Digital Solutions collects, uses, and protects your personal information. Our comprehensive privacy policy ensures your data security and privacy.'
   );
   const pageKeywords = generateKeywords(['privacy policy', 'data protection', 'personal information', 'cookies', 'data security']);
 
@@ -97,7 +97,7 @@ const PrivacyPolicy = () => {
             {/* Introduction */}
             <div className="mb-12">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                At Tabor Digital Solutions, we are committed to protecting your privacy and ensuring the security of your personal information. 
+                At Tabor Engineering & Digital Solutions, we are committed to protecting your privacy and ensuring the security of your personal information. 
                 This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
               </p>
               <p className="text-gray-700 leading-relaxed">

@@ -12,7 +12,7 @@ const RESEND_API_URL = 'https://api.resend.com/emails';
 
 // Email details
 const fromEmail = 'noreply@tabordigital.com'; // Replace with your verified Resend domain email
-const subject = 'Thank You for Contacting Tabor Digital Solutions!';
+const subject = 'Thank You for Contacting Tabor Engineering & Digital Solutions!';
 
 function corsHeaders() {
   return {
@@ -44,12 +44,12 @@ serve(async (req) => {
     const html = `
       <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
         <h1 style="color: #2C3E50;">Hello ${name},</h1>
-        <p>Thank you for reaching out to Tabor Digital Solutions!</p>
+        <p>Thank you for reaching out to Tabor Engineering & Digital Solutions!</p>
         <p>We have received your message and appreciate you considering us for your project. Our team will review your inquiry and get back to you within 24 business hours.</p>
         <p>If you have any urgent questions, feel free to reply directly to this email.</p>
         <br>
         <p>Best regards,</p>
-        <p><strong>The Tabor Digital Solutions Team</strong></p>
+        <p><strong>The Tabor Engineering & Digital Solutions Team</strong></p>
         <hr>
         <p style="font-size: 0.8em; color: #777;">
           <a href="https://www.tabordigital.com">Website</a> | 

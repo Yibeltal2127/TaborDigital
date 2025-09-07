@@ -45,7 +45,7 @@ const MetaTags: React.FC<MetaTagsProps> = ({
       <meta name="author" content={author} />
       
       {/* Favicon */}
-      <link rel="icon" type="image/jpeg" href="/tabordigitallogo.jpg" />
+      <link rel="icon" type="image/png" href="/tabor-engineering-logo.png" />
       
       {/* Robots */}
       {noIndex && <meta name="robots" content="noindex, nofollow" />}

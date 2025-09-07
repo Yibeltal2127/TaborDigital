@@ -18,7 +18,6 @@ import Portfolio from './components/Portfolio';
 import WhyChooseUs from './components/WhyChooseUs';
 import Process from './components/Process';
 import TestimonialSection from './components/TestimonialSection';
-import BlogSection from './components/BlogSection';
 import ContactForm from './components/ContactForm';
 import CTABanner from './components/CTABanner';
 import Footer from './components/Footer';
@@ -77,7 +76,6 @@ const AppContent: React.FC = () => {
               <WhyChooseUs />
               <Process />
               <TestimonialSection />
-              <BlogSection />
               <ContactForm />
               <CTABanner />
             </main>

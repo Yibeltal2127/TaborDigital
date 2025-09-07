@@ -60,7 +60,7 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ compact = false }) => {
           <Mail className="text-[#FF6B35]" size={compact ? 20 : 28} />
           Subscribe to Our Newsletter
         </h2>
-        <p className={compact ? "text-gray-600 mb-1 text-sm" : "text-gray-600 mb-2"}>Get the latest updates, tips, and exclusive offers from Tabor Digital Solutions.</p>
+        <p className={compact ? "text-gray-600 mb-1 text-sm" : "text-gray-600 mb-2"}>Get the latest updates, tips, and exclusive offers from Tabor Engineering & Digital Solutions.</p>
         {success && (
           <div className="bg-green-50 text-green-700 p-2 rounded flex items-center text-sm">
             <CheckCircle className="mr-2" size={16} />

@@ -84,7 +84,7 @@ const ComingSoon = () => {
 
   const testimonials = [
     {
-      quote: "Can't wait to see what Tabor Digital has in store. Their current services are already amazing!",
+      quote: "Can't wait to see what Tabor Engineering & Digital Solutions has in store. Their current services are already amazing!",
       author: "Sarah Johnson",
       company: "Tech Innovations",
       avatar: "👩‍💼"

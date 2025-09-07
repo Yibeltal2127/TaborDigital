@@ -15,7 +15,7 @@ const MaintenanceMode = () => {
 
   const pageTitle = generatePageTitle('Site Under Maintenance - We\'ll Be Back Soon');
   const pageDescription = generateMetaDescription(
-    'Tabor Digital Solutions is currently undergoing scheduled maintenance. We\'ll be back online shortly with improved features and performance.'
+    'Tabor Engineering & Digital Solutions is currently undergoing scheduled maintenance. We\'ll be back online shortly with improved features and performance.'
   );
 
   useEffect(() => {
@@ -104,7 +104,7 @@ const MaintenanceMode = () => {
           </h1>
           
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            Tabor Digital Solutions is currently undergoing scheduled maintenance to bring you an even better experience. 
+            Tabor Engineering & Digital Solutions is currently undergoing scheduled maintenance to bring you an even better experience. 
             We'll be back online shortly!
           </p>
 

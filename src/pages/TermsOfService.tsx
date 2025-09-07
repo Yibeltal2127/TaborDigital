@@ -6,7 +6,7 @@ import { generatePageTitle, generateMetaDescription, generateKeywords, generateC
 const TermsOfService = () => {
   const pageTitle = generatePageTitle('Terms of Service - Legal Terms & Conditions');
   const pageDescription = generateMetaDescription(
-    'Read our terms of service to understand the legal terms and conditions for using Tabor Digital Solutions services and website.'
+    'Read our terms of service to understand the legal terms and conditions for using Tabor Engineering & Digital Solutions services and website.'
   );
   const pageKeywords = generateKeywords(['terms of service', 'legal terms', 'conditions', 'user agreement', 'service agreement']);
 
@@ -38,7 +38,7 @@ const TermsOfService = () => {
       icon: FileText,
       title: 'Intellectual Property',
       content: [
-        'All content on our website is owned by Tabor Digital Solutions or our licensors',
+        'All content on our website is owned by Tabor Engineering & Digital Solutions or our licensors',
         'You may not reproduce, distribute, or create derivative works without permission',
         'Client work and deliverables remain the property of the respective clients upon full payment',
         'We retain the right to showcase completed work in our portfolio unless otherwise agreed',
@@ -96,8 +96,8 @@ const TermsOfService = () => {
             {/* Introduction */}
             <div className="mb-12">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Welcome to Tabor Digital Solutions. These Terms of Service ("Terms") govern your use of our website, 
-                services, and any related applications or platforms (collectively, the "Services") operated by Tabor Digital Solutions.
+                Welcome to Tabor Engineering & Digital Solutions. These Terms of Service ("Terms") govern your use of our website, 
+                services, and any related applications or platforms (collectively, the "Services") operated by Tabor Engineering & Digital Solutions.
               </p>
               <p className="text-gray-700 leading-relaxed">
                 Please read these Terms carefully before using our Services. By accessing or using our Services, 

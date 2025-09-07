@@ -10,7 +10,7 @@ const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY');
 const RESEND_API_URL = 'https://api.resend.com/emails';
 
 const fromEmail = 'noreply@tabordigital.com'; // Use your verified Resend domain email
-const subject = 'Welcome to the Tabor Digital Newsletter!';
+const subject = 'Welcome to the Tabor Engineering & Digital Solutions Newsletter!';
 
 function corsHeaders() {
   return {
@@ -41,12 +41,12 @@ serve(async (req) => {
     const html = `
       <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
         <h1 style="color: #2C3E50;">Welcome${name ? ' ' + name : ''}!</h1>
-        <p>Thank you for subscribing to the Tabor Digital Solutions newsletter.</p>
+        <p>Thank you for subscribing to the Tabor Engineering & Digital Solutions newsletter.</p>
         <p>You'll now receive updates, tips, and exclusive content straight to your inbox.</p>
         <p>If you have any questions or want to learn more about our services, feel free to <a href="https://www.tabordigital.com/contact">contact us</a> anytime.</p>
         <br>
         <p>Best regards,</p>
-        <p><strong>The Tabor Digital Solutions Team</strong></p>
+        <p><strong>The Tabor Engineering & Digital Solutions Team</strong></p>
         <hr>
         <p style="font-size: 0.8em; color: #777;">
           <a href="https://www.tabordigital.com">Website</a> | 

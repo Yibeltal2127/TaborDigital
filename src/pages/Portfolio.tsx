@@ -355,7 +355,7 @@ const Portfolio = () => {
                 <h3 className="text-lg font-semibold">Client Testimonial</h3>
               </div>
               <p className="text-gray-600 mb-4">
-                "Tabor Digital transformed our business with their innovative solutions. The team's expertise and dedication exceeded our expectations."
+                "Tabor Engineering & Digital Solutions transformed our business with their innovative solutions. The team's expertise and dedication exceeded our expectations."
               </p>
               <div className="flex items-center">
                 <div className="w-10 h-10 bg-[#FF6B35] rounded-full flex items-center justify-center text-white font-bold mr-3">

@@ -18,9 +18,9 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
   };
 
   const logoSizeClasses = {
-    sm: 'w-4 h-4',
-    md: 'w-8 h-8',
-    lg: 'w-12 h-12'
+    sm: 'w-6 h-6',
+    md: 'w-10 h-10',
+    lg: 'w-16 h-16'
   };
 
   return (
@@ -33,11 +33,11 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
           <div className="absolute inset-1 rounded-full bg-white flex items-center justify-center">
             {/* Logo Image */}
             <img 
-              src="/tabordigitallogo.jpg" 
-              alt="Tabor Digital Solutions Logo" 
+              src="/tabor-engineering-logo.png" 
+              alt="Tabor Engineering & Digital Solutions Logo" 
               className={`${logoSizeClasses[size]} object-contain animate-pulse`}
               onError={(e) => {
-                e.currentTarget.src = '/tabordigitallogo.jpg';
+                e.currentTarget.src = '/tabor-engineering-logo.png';
               }}
             />
           </div>

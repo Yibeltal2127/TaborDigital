@@ -14,7 +14,7 @@ const ThankYou = () => {
 
   const pageTitle = generatePageTitle('Thank You - We\'ll Be In Touch Soon');
   const pageDescription = generateMetaDescription(
-    'Thank you for contacting Tabor Digital Solutions. We\'ve received your message and will respond within 24 hours.'
+    'Thank you for contacting Tabor Engineering & Digital Solutions. We\'ve received your message and will respond within 24 hours.'
   );
 
   useEffect(() => {
@@ -122,7 +122,7 @@ const ThankYou = () => {
 
   const testimonials = [
     {
-      quote: "Working with Tabor Digital was a game-changer for our business. They delivered beyond our expectations.",
+      quote: "Working with Tabor Engineering & Digital Solutions was a game-changer for our business. They delivered beyond our expectations.",
       author: "Sarah Johnson",
       company: "Tech Innovations Ltd",
       rating: 5

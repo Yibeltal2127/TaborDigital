@@ -1,4 +1,4 @@
-# ✅ Post-Deployment Checklist - Tabor Digital
+# ✅ Post-Deployment Checklist - Tabor Engineering & Digital Solutions
 
 ## 🎉 Congratulations! Your site is live on Vercel!
 
@@ -195,4 +195,4 @@
 
 ---
 
-**🎉 Your Tabor Digital website is now live and ready to grow!** 
+**🎉 Your Tabor Engineering & Digital Solutions website is now live and ready to grow!** 

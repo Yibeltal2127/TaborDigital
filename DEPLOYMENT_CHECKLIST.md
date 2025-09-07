@@ -1,4 +1,4 @@
-# 🚀 Tabor Digital - Deployment Checklist
+# 🚀 Tabor Engineering & Digital Solutions - Deployment Checklist
 
 ## ✅ Pre-Deployment Tasks
 

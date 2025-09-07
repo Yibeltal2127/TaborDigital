@@ -20,7 +20,7 @@ export interface ChatResponse {
 export const chatbotResponses = {
   greeting: [
     "Hello! I'm here to help you learn about our digital services. What would you like to know?",
-    "Hi there! Welcome to Tabor Digital Solutions. How can I assist you today?",
+    "Hi there! Welcome to Tabor Engineering & Digital Solutions. How can I assist you today?",
     "Great to see you! I'm your virtual assistant. What brings you here today?"
   ],
   
