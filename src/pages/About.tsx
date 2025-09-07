@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import MetaTags from '../components/SEO/MetaTags';
 import StructuredData from '../components/SEO/StructuredData';
 import TeamSection from '../components/TeamSection';
-import { Award, Users, Globe, TrendingUp, CheckCircle, ArrowRight, Star, Target, Zap, Shield, Heart, Lightbulb, Rocket, Palette } from 'lucide-react';
+import { Award, Users, Globe, TrendingUp, CheckCircle, ArrowRight, Target, Zap, Shield, Heart, Lightbulb, Rocket, Palette } from 'lucide-react';
 import { generatePageTitle, generateMetaDescription, generateKeywords, generateCanonicalUrl } from '../utils/seo';
 import { scrollToTop } from '../utils/smoothScroll';
 
@@ -455,7 +455,7 @@ const About = () => {
               </div>
               <div className="flex items-center">
                 <CheckCircle className="w-5 h-5 mr-2" />
-                <span className="font-semibold">95% Client Satisfaction</span>
+                <span className="font-semibold">100% Client Satisfaction</span>
               </div>
             </div>
           </div>

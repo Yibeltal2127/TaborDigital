@@ -51,7 +51,7 @@ const Hero = () => {
               {[
                 { icon: CheckCircle, text: "5+ Years Experience" },
                 { icon: CheckCircle, text: "100+ Projects Delivered" },
-                { icon: CheckCircle, text: "95% Client Satisfaction" },
+                { icon: CheckCircle, text: "100% Client Satisfaction" },
                 { icon: CheckCircle, text: "24/7 Support Available" }
               ].map((benefit, index) => (
                 <div key={index} className="flex items-center space-x-3">
